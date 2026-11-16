@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-16T10:11:57+00:00",
+  "title": "Design System: Xanadu",
+  "extensions": {
+    "colorMeta": {
+      "morning-haze": {
+        "role": "neutral",
+        "displayName": "Morning Haze",
+        "canonical": "oklch(97.7% 0.002 165)",
+        "tonalRamp": [
+          "oklch(15% 0.001 165)",
+          "oklch(25% 0.001 165)",
+          "oklch(35% 0.002 165)",
+          "oklch(45% 0.002 165)",
+          "oklch(55% 0.002 165)",
+          "oklch(68% 0.002 165)",
+          "oklch(82% 0.001 165)",
+          "oklch(95% 0.0 165)"
+        ]
+      },
+      "plain-white": {
+        "role": "neutral",
+        "displayName": "Plain White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0.0 0)",
+          "oklch(25% 0.0 0)",
+          "oklch(35% 0.0 0)",
+          "oklch(45% 0.0 0)",
+          "oklch(55% 0.0 0)",
+          "oklch(68% 0.0 0)",
+          "oklch(82% 0.0 0)",
+          "oklch(95% 0.0 0)"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "oklch(96.5% 0.003 175)",
+        "tonalRamp": [
+          "oklch(15% 0.001 175)",
+          "oklch(25% 0.002 175)",
+          "oklch(35% 0.003 175)",
+          "oklch(45% 0.003 175)",
+          "oklch(55% 0.003 175)",
+          "oklch(68% 0.003 175)",
+          "oklch(82% 0.002 175)",
+          "oklch(95% 0.0 175)"
+        ]
+      },
+      "pale-stone": {
+        "role": "neutral",
+        "displayName": "Pale Stone",
+        "canonical": "oklch(94.2% 0.006 183)",
+        "tonalRamp": [
+          "oklch(15% 0.003 183)",
+          "oklch(25% 0.004 183)",
+          "oklch(35% 0.006 183)",
+          "oklch(45% 0.006 183)",
+          "oklch(55% 0.006 183)",
+          "oklch(68% 0.005 183)",
+          "oklch(82% 0.003 183)",
+          "oklch(95% 0.001 183)"
+        ]
+      },
+      "harbour-ink": {
+        "role": "neutral",
+        "displayName": "Harbour Ink",
+        "canonical": "oklch(18.9% 0.011 217)",
+        "tonalRamp": [
+          "oklch(15% 0.005 217)",
+          "oklch(25% 0.008 217)",
+          "oklch(35% 0.011 217)",
+          "oklch(45% 0.011 217)",
+          "oklch(55% 0.011 217)",
+          "oklch(68% 0.01 217)",
+          "oklch(82% 0.006 217)",
+          "oklch(95% 0.002 217)"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "oklch(49.6% 0.020 220)",
+        "tonalRamp": [
+          "oklch(15% 0.008 220)",
+          "oklch(25% 0.014 220)",
+          "oklch(35% 0.02 220)",
+          "oklch(45% 0.02 220)",
+          "oklch(55% 0.02 220)",
+          "oklch(68% 0.018 220)",
+          "oklch(82% 0.01 220)",
+          "oklch(95% 0.003 220)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(18.9% 0.011 217 / 0.09)",
+        "tonalRamp": [
+          "oklch(15% 0.005 217)",
+          "oklch(25% 0.008 217)",
+          "oklch(35% 0.011 217)",
+          "oklch(45% 0.011 217)",
+          "oklch(55% 0.011 217)",
+          "oklch(68% 0.01 217)",
+          "oklch(82% 0.006 217)",
+          "oklch(95% 0.002 217)"
+        ]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "oklch(18.9% 0.011 217 / 0.16)",
+        "tonalRamp": [
+          "oklch(15% 0.005 217)",
+          "oklch(25% 0.008 217)",
+          "oklch(35% 0.011 217)",
+          "oklch(45% 0.011 217)",
+          "oklch(55% 0.011 217)",
+          "oklch(68% 0.01 217)",
+          "oklch(82% 0.006 217)",
+          "oklch(95% 0.002 217)"
+        ]
+      },
+      "xanadu-teal": {
+        "role": "primary",
+        "displayName": "Xanadu Teal",
+        "canonical": "oklch(65.4% 0.112 208)",
+        "tonalRamp": [
+          "oklch(15% 0.047 208)",
+          "oklch(25% 0.078 208)",
+          "oklch(35% 0.11 208)",
+          "oklch(45% 0.112 208)",
+          "oklch(55% 0.112 208)",
+          "oklch(68% 0.1 208)",
+          "oklch(82% 0.056 208)",
+          "oklch(95% 0.016 208)"
+        ]
+      },
+      "deep-lagoon": {
+        "role": "primary",
+        "displayName": "Deep Lagoon",
+        "canonical": "oklch(53.6% 0.092 208)",
+        "tonalRamp": [
+          "oklch(15% 0.039 208)",
+          "oklch(25% 0.064 208)",
+          "oklch(35% 0.09 208)",
+          "oklch(45% 0.092 208)",
+          "oklch(55% 0.092 208)",
+          "oklch(68% 0.082 208)",
+          "oklch(82% 0.046 208)",
+          "oklch(95% 0.013 208)"
+        ]
+      },
+      "night-lagoon": {
+        "role": "primary",
+        "displayName": "Night Lagoon",
+        "canonical": "oklch(27.9% 0.040 208)",
+        "tonalRamp": [
+          "oklch(15% 0.017 208)",
+          "oklch(25% 0.028 208)",
+          "oklch(35% 0.039 208)",
+          "oklch(45% 0.04 208)",
+          "oklch(55% 0.04 208)",
+          "oklch(68% 0.036 208)",
+          "oklch(82% 0.02 208)",
+          "oklch(95% 0.006 208)"
+        ]
+      },
+      "shallow-water": {
+        "role": "primary",
+        "displayName": "Shallow Water",
+        "canonical": "oklch(95.7% 0.019 205)",
+        "tonalRamp": [
+          "oklch(15% 0.008 205)",
+          "oklch(25% 0.013 205)",
+          "oklch(35% 0.019 205)",
+          "oklch(45% 0.019 205)",
+          "oklch(55% 0.019 205)",
+          "oklch(68% 0.017 205)",
+          "oklch(82% 0.01 205)",
+          "oklch(95% 0.003 205)"
+        ]
+      },
+      "sea-glass": {
+        "role": "primary",
+        "displayName": "Sea Glass",
+        "canonical": "oklch(90.5% 0.046 205)",
+        "tonalRamp": [
+          "oklch(15% 0.019 205)",
+          "oklch(25% 0.032 205)",
+          "oklch(35% 0.045 205)",
+          "oklch(45% 0.046 205)",
+          "oklch(55% 0.046 205)",
+          "oklch(68% 0.041 205)",
+          "oklch(82% 0.023 205)",
+          "oklch(95% 0.006 205)"
+        ]
+      },
+      "signal-orange": {
+        "role": "secondary",
+        "displayName": "Signal Orange",
+        "canonical": "oklch(70.3% 0.198 43)",
+        "tonalRamp": [
+          "oklch(15% 0.083 43)",
+          "oklch(25% 0.139 43)",
+          "oklch(35% 0.194 43)",
+          "oklch(45% 0.198 43)",
+          "oklch(55% 0.198 43)",
+          "oklch(68% 0.177 43)",
+          "oklch(82% 0.1 43)",
+          "oklch(95% 0.028 43)"
+        ]
+      },
+      "signal-orange-hover": {
+        "role": "secondary",
+        "displayName": "Signal Orange Hover",
+        "canonical": "oklch(73.3% 0.176 46)",
+        "tonalRamp": [
+          "oklch(15% 0.074 46)",
+          "oklch(25% 0.123 46)",
+          "oklch(35% 0.172 46)",
+          "oklch(45% 0.176 46)",
+          "oklch(55% 0.176 46)",
+          "oklch(68% 0.158 46)",
+          "oklch(82% 0.089 46)",
+          "oklch(95% 0.025 46)"
+        ]
+      },
+      "ember": {
+        "role": "secondary",
+        "displayName": "Ember",
+        "canonical": "oklch(61.3% 0.182 42)",
+        "tonalRamp": [
+          "oklch(15% 0.076 42)",
+          "oklch(25% 0.127 42)",
+          "oklch(35% 0.178 42)",
+          "oklch(45% 0.182 42)",
+          "oklch(55% 0.182 42)",
+          "oklch(68% 0.163 42)",
+          "oklch(82% 0.092 42)",
+          "oklch(95% 0.025 42)"
+        ]
+      },
+      "kiln": {
+        "role": "secondary",
+        "displayName": "Kiln",
+        "canonical": "oklch(56.4% 0.168 43)",
+        "tonalRamp": [
+          "oklch(15% 0.071 43)",
+          "oklch(25% 0.118 43)",
+          "oklch(35% 0.165 43)",
+          "oklch(45% 0.168 43)",
+          "oklch(55% 0.168 43)",
+          "oklch(68% 0.151 43)",
+          "oklch(82% 0.085 43)",
+          "oklch(95% 0.024 43)"
+        ]
+      },
+      "char": {
+        "role": "secondary",
+        "displayName": "Char",
+        "canonical": "oklch(16.4% 0.039 58)",
+        "tonalRamp": [
+          "oklch(15% 0.016 58)",
+          "oklch(25% 0.027 58)",
+          "oklch(35% 0.038 58)",
+          "oklch(45% 0.039 58)",
+          "oklch(55% 0.039 58)",
+          "oklch(68% 0.035 58)",
+          "oklch(82% 0.02 58)",
+          "oklch(95% 0.005 58)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline and the closing statement; one per screen."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "Point-of-view and manifesto lines."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card and panel titles."
+      },
+      "title-sm": {
+        "displayName": "Title Sm",
+        "purpose": "Step names and short item headings."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Statistics and scores, tabular, always sourced."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "One or two sentences under a headline, in Slate."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, max 65ch."
+      },
+      "body-sm": {
+        "displayName": "Body Sm",
+        "purpose": "Card copy, nav links, choices."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Button labels."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Sources, footnotes, helper text; never below 13px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Mono credential line, data labels, console text; never an eyebrow."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lift",
+        "value": "0 20px 40px -30px oklch(18.9% 0.011 217 / 0.25)",
+        "purpose": "Linked cards on hover, with a 2px upward move."
+      },
+      {
+        "name": "float",
+        "value": "0 1px 0 oklch(18.9% 0.011 217 / 0.04), 0 30px 60px -34px oklch(18.9% 0.011 217 / 0.28)",
+        "purpose": "Example console and result panel at rest."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All entrances and state changes."
+      },
+      {
+        "name": "hover",
+        "value": "150-200ms",
+        "purpose": "Colour and 1-3px moves on buttons, links, rows."
+      },
+      {
+        "name": "entrance",
+        "value": "450-800ms, transform only, from visible",
+        "purpose": "Console lines, hero, cards. Never fade from zero opacity."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all loops stop; entrances removed",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "480px"
+      },
+      {
+        "name": "tablet",
+        "value": "820px"
+      },
+      {
+        "name": "split",
+        "value": "1000px"
+      },
+      {
+        "name": "wrap",
+        "value": "1200px"
+      }
+    ],
+    "patterns": [
+      {
+        "name": "x-mark",
+        "purpose": "One graphic per screen besides the logo: whole (48-72px) or cropped by a container edge (at most half hidden). Never tiled, rotated, outlined or looped."
+      },
+      {
+        "name": "field-grid",
+        "value": "64px square, Hairline lines at ≤9%, radial mask to ~60% coverage",
+        "purpose": "Behind the hero and the teal band only."
+      }
+    ],
+    "arabic": {
+      "status": "dormant until native-speaker approval",
+      "faces": [
+        "Noto Kufi Arabic 500-600 (accent lines)",
+        "Noto Sans Arabic 400 (phrases)"
+      ],
+      "limits": "max one line per screen, two per page; hero, teal band, footer only",
+      "size": "1.1x the paired Latin size, line-height ≥1.5, letter-spacing 0",
+      "colour": "Slate or Deep Lagoon",
+      "markup": "lang=\"ar\" dir=\"rtl\"; layout never mirrors"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one main action per screen: start the assessment or book a conversation.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Start the assessment <span aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;background:oklch(70.3% 0.198 43);color:oklch(16.4% 0.039 58);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none;transition:background .2s,transform .2s} .ds-btn-primary span{transition:transform .2s} .ds-btn-primary:hover{background:oklch(73.3% 0.176 46);transform:translateY(-1px)} .ds-btn-primary:hover span{transform:translateX(3px)} .ds-btn-primary:active{transform:none} .ds-btn-primary:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action beside a primary.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">See how we work</a>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:999px;border:1px solid oklch(18.9% 0.011 217 / 0.16);color:oklch(18.9% 0.011 217);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none;transition:border-color .2s,transform .2s} .ds-btn-ghost:hover{border-color:oklch(18.9% 0.011 217);transform:translateY(-1px)} .ds-btn-ghost:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
+    },
+    {
+      "name": "Choice Pill",
+      "kind": "chip",
+      "refersTo": "choice",
+      "description": "Assessment answer: a real radio styled as a pill.",
+      "html": "<div class=\"ds-choices\"><label class=\"ds-choice\"><input type=\"radio\" name=\"q\" checked>Team pilots</label><label class=\"ds-choice\"><input type=\"radio\" name=\"q\">In production</label></div>",
+      "css": ".ds-choices{display:flex;flex-wrap:wrap;gap:8px} .ds-choice{position:relative;display:inline-flex;padding:9px 14px;border-radius:999px;border:1px solid oklch(18.9% 0.011 217 / 0.16);background:oklch(100% 0 0);color:oklch(49.6% 0.020 220);font:400 15px/1.3 Geist,system-ui,sans-serif;cursor:pointer;transition:all .15s} .ds-choice input{position:absolute;opacity:0;pointer-events:none} .ds-choice:hover{border-color:oklch(18.9% 0.011 217);color:oklch(18.9% 0.011 217)} .ds-choice:has(input:checked){background:oklch(18.9% 0.011 217);border-color:oklch(18.9% 0.011 217);color:oklch(100% 0 0)} .ds-choice:has(input:focus-visible){outline:2px solid oklch(70.3% 0.198 43);outline-offset:2px}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Non-interactive label in secondary lists (sectors).",
+      "html": "<span class=\"ds-chip\">Public Sector</span>",
+      "css": ".ds-chip{display:inline-flex;padding:7px 12px;border-radius:999px;border:1px solid oklch(18.9% 0.011 217 / 0.09);color:oklch(18.9% 0.011 217);font:400 15px/1.2 Geist,system-ui,sans-serif}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "White card on haze; lifts only when it is a link. Optional 2px accent top rule.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-card-tag\">Claude · by Anthropic</span><h3>The reasoning and workflow layer</h3><p>Embed Claude into the processes and decisions that run the business.</p></a>",
+      "css": ".ds-card{display:block;position:relative;padding:32px;border-radius:20px;background:oklch(100% 0 0);border:1px solid oklch(18.9% 0.011 217 / 0.09);color:oklch(18.9% 0.011 217);text-decoration:none;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s} .ds-card::before{content:\"\";position:absolute;inset:0 0 auto 0;height:2px;background:oklch(70.3% 0.198 43)} .ds-card:hover{transform:translateY(-2px);border-color:oklch(18.9% 0.011 217 / 0.16);box-shadow:0 20px 40px -30px oklch(18.9% 0.011 217 / 0.25)} .ds-card-tag{font:500 11px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:oklch(49.6% 0.020 220)} .ds-card h3{margin:14px 0 8px;font:600 26px/1.05 Geist,system-ui,sans-serif;letter-spacing:-.03em} .ds-card p{margin:0;color:oklch(49.6% 0.020 220);font:400 15px/1.5 Geist,system-ui,sans-serif}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky translucent bar with one primary action.",
+      "html": "<nav class=\"ds-nav\"><b class=\"ds-nav-brand\">xanadu</b><a href=\"#\">AI Transformation</a><a href=\"#\">How we work</a><a href=\"#\">About</a><a class=\"ds-nav-cta\" href=\"#\">Start the assessment</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:28px;height:68px;padding:0 24px;background:oklch(97.7% 0.002 165 / 0.85);backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid oklch(18.9% 0.011 217 / 0.09);font:400 14px/1 Geist,system-ui,sans-serif} .ds-nav-brand{font-weight:600;font-size:18px;color:oklch(18.9% 0.011 217);margin-right:auto} .ds-nav a{color:oklch(49.6% 0.020 220);text-decoration:none;transition:color .15s} .ds-nav a:hover{color:oklch(18.9% 0.011 217)} .ds-nav .ds-nav-cta{height:42px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:oklch(70.3% 0.198 43);color:oklch(16.4% 0.039 58);font-weight:500} .ds-nav a:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
+    },
+    {
+      "name": "Example Console",
+      "kind": "custom",
+      "refersTo": "console",
+      "description": "Signature panel playing an illustrative deployment; always labelled example.",
+      "html": "<div class=\"ds-console\"><div class=\"ds-console-head\"><span>example deployment</span><span class=\"ds-live\">example</span></div><ol><li><i>›</i><span><em>assess</em> workflows mapped</span><b>42</b></li><li><i>›</i><span><em>enable</em> brand kit locked</span><b>✓</b></li></ol><div class=\"ds-meter\"><span></span></div></div>",
+      "css": ".ds-console{width:420px;max-width:100%;border-radius:20px;border:1px solid oklch(18.9% 0.011 217 / 0.16);background:oklch(100% 0 0);box-shadow:0 1px 0 oklch(18.9% 0.011 217 / 0.04),0 30px 60px -34px oklch(18.9% 0.011 217 / 0.28);font:400 13px/1.5 'Geist Mono',ui-monospace,monospace;color:oklch(18.9% 0.011 217)} .ds-console-head{display:flex;justify-content:space-between;padding:14px 16px;border-bottom:1px solid oklch(18.9% 0.011 217 / 0.09);color:oklch(49.6% 0.020 220);font-size:12px} .ds-live{color:oklch(53.6% 0.092 208);text-transform:uppercase;letter-spacing:.12em;font-size:11px} .ds-console ol{list-style:none;margin:0;padding:12px 16px} .ds-console li{display:grid;grid-template-columns:18px 1fr auto;gap:10px;padding:7px 0;border-bottom:1px dashed oklch(18.9% 0.011 217 / 0.09)} .ds-console i{font-style:normal;color:oklch(53.6% 0.092 208)} .ds-console em{font-style:normal;color:oklch(49.6% 0.020 220)} .ds-console b{font-weight:400;color:oklch(49.6% 0.020 220)} .ds-meter{margin:4px 16px 16px;height:4px;border-radius:4px;background:oklch(94.2% 0.006 183);overflow:hidden} .ds-meter span{display:block;width:60%;height:100%;background:linear-gradient(90deg,oklch(65.4% 0.112 208),oklch(70.3% 0.198 43))}"
+    },
+    {
+      "name": "Teal Band",
+      "kind": "custom",
+      "refersTo": "band-teal",
+      "description": "The one coloured ground: the closing call to action.",
+      "html": "<section class=\"ds-band\"><h2>Move from experiment to production.</h2><p>Tell us where you are with AI and Canva.</p><a href=\"#\">hello@xanadu.co →</a></section>",
+      "css": ".ds-band{padding:72px 24px;text-align:center;background:oklch(65.4% 0.112 208);color:oklch(18.9% 0.011 217);font-family:Geist,system-ui,sans-serif} .ds-band h2{margin:0;font-weight:650;font-size:48px;line-height:.95;letter-spacing:-.04em} .ds-band p{margin:16px 0 24px;color:oklch(27.9% 0.040 208);font-size:17px} .ds-band a{display:inline-flex;height:48px;align-items:center;padding:0 22px;border-radius:999px;background:oklch(100% 0 0);color:oklch(18.9% 0.011 217);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none;transition:transform .2s} .ds-band a:hover{transform:translateY(-1px)} .ds-band a:focus-visible{outline:2px solid oklch(18.9% 0.011 217);outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Control Room in Daylight",
+    "overview": "Xanadu sells AI that actually runs the business, to people who are accountable for it. The system looks like a well-run operations room seen at ten in the morning: bright, quiet and exact, with every instrument readable and nothing decorative competing for attention. Confidence comes from restraint and precision, not from effects. The visitor should feel they're looking at people who have shipped this before.\n\nThe page is light, near-white haze with plain white surfaces. Two brand colours do all the signalling: **Xanadu Teal** for structure and calm emphasis, **Signal Orange** for the one action that matters. Type is one family, Geist, set large and tight for statements and plain for reading, with Geist Mono kept for small labels and machine output. Density is generous: one idea per section, short copy, wide margins.\n\nConfirmed rejections: dark or black page grounds, glow and spotlight effects, stock \"AI\" imagery, the old xanadu.co petrol teal, amber and serif look, and text-heavy heroes.",
+    "keyCharacteristics": [
+      "Light-first: Morning Haze ground, Plain White surfaces, Harbour Ink text.",
+      "Two accents only, each with one job: teal structures, orange acts.",
+      "One typeface family, with weight and size doing the hierarchy.",
+      "Hairline borders and soft, offset shadows; nothing glows.",
+      "Short copy: a headline, one or two sentences, one action."
+    ],
+    "rules": [
+      {
+        "name": "The Two Jobs Rule",
+        "body": "Teal structures, orange acts. If an element isn't the primary action, the current position, or the logo's X, it isn't orange.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Shout Rule",
+        "body": "Signal Orange covers no more than about 5% of any screen: one primary button, one marker, at most one highlighted figure.",
+        "section": "colors"
+      },
+      {
+        "name": "The Daylight Rule",
+        "body": "No page or section ground darker than Pale Stone, with one exception: the single Xanadu Teal band. Harbour Ink appears as text, small fills (choice pills, step dots) and nothing larger.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Teals Rule",
+        "body": "Xanadu Teal for fills and display type; Deep Lagoon for anything a person has to read at body size.",
+        "section": "colors"
+      },
+      {
+        "name": "The Short Copy Rule",
+        "body": "A section is a headline, at most two sentences and one action. If a hero needs a third sentence, the headline isn't finished.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Kicker Rule",
+        "body": "Headings stand alone. A mono label may introduce the hero's credential line, or label data, but never sits above a section heading as an eyebrow, and never carries a number like \"01 —\".",
+        "section": "typography"
+      },
+      {
+        "name": "The Tight Display Rule",
+        "body": "Display and headline tracking stays between -0.04em and -0.03em, and line-height never drops below 0.92. Tighter than that and Geist's counters close.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Gradient Rule",
+        "body": "The hero headline may carry a single accent word in a left-to-right Deep Lagoon to Signal Orange gradient (\"sticks.\"). It appears once on the site and nowhere else: no other gradient text, ever.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Idea Rule",
+        "body": "Each section carries one idea at one scale. A dense section, such as the assessment, is followed by a quiet one.",
+        "section": "layout"
+      },
+      {
+        "name": "The No-Glow Rule",
+        "body": "No radial spotlights, blurred colour blobs or neon edges. Depth comes from a border, a soft offset shadow, or a change of ground.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Mark Rule",
+        "body": "One X graphic per screen, besides the logo. Its power is its rarity.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Quiet Pattern Rule",
+        "body": "If a pattern is the first thing you notice, it's too strong. Patterns sit behind content, never between the reader and the words.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** keep every page ground Morning Haze or Plain White; the only coloured ground is one Xanadu Teal band.",
+      "**Do** give each screen one Signal Orange primary action, with Char text.",
+      "**Do** use Deep Lagoon (#007C89) for teal text at body size, and Kiln (#C24A00) for small orange text.",
+      "**Do** keep sections to a headline, at most two sentences and one action.",
+      "**Do** attribute every statistic in a Caption source line, and label every demonstration as an example.",
+      "**Do** let motion start from content that is already visible: transform-based entrances, and no fade from zero opacity.",
+      "**Do** respect `prefers-reduced-motion`: loops stop and content stays put."
+    ],
+    "donts": [
+      "**Don't** use dark or black page backgrounds, glows, radial spotlights or neon edges.",
+      "**Don't** use the original xanadu.co petrol teal or amber, or the muted teals of the rejected v2 directions.",
+      "**Don't** set body text in Xanadu Teal or Signal Orange; they fail contrast on white.",
+      "**Don't** stack section labels above headings, or number them \"01 —\".",
+      "**Don't** use gradient text anywhere except the single hero accent word.",
+      "**Don't** tile, rotate or animate the X mark, or show it more than once per screen beyond the logo.",
+      "**Don't** ship Arabic before a native speaker has approved it; when it ships, never more than one line per screen.",
+      "**Don't** use stock AI imagery (brains, circuits, robots, glowing orbs)."
+    ]
+  }
+}
