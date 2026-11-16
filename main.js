@@ -55,7 +55,7 @@
 (() => {
   if (!document.getElementById('org')) return;
   // ---- Content -----------------------------------------------------------
-  const VERTICALS = [
+  const ALL_VERTICALS = [
     { name: 'Finance', short: 'Finance', teams: ['FP&A', 'Payables', 'Compliance'],
       task: { team: 1, steps: ['Matched 214 invoices to purchase orders', 'Flagged 2 exceptions for review'], pending: 'Waiting for the finance lead', approved: 'Approved by the finance lead' } },
     { name: 'HR', short: 'HR', teams: ['Recruiting', 'Onboarding', 'Learning'],
@@ -67,6 +67,10 @@
     { name: 'Marketing', short: 'Mktg', teams: ['Content & SEO', 'Paid media', 'Analytics'],
       task: { team: 0, steps: ['Drafted 12 SEO briefs', 'Checked each against the brand guide'], pending: 'Waiting for the content lead', approved: 'Approved by the content lead' } },
   ];
+  // Compact cards (phones, narrow columns) feature four functions: HR drops out to save space.
+  const COMPACT_PX = 500;
+  const COMPACT_DROP = 'HR';
+  let VERTICALS = ALL_VERTICALS;
   const STAGES = ['Assess', 'Blueprint', 'Enable', 'Govern'];
   // Rollout start times: gaps shrink so it reads as a wave, not a metronome.
   const ROLL_STARTS = [0, 520, 980, 1380, 1720];
@@ -88,31 +92,46 @@
   const el = (tag, cls, html) => { const n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; };
 
   const stemLit = el('i', 'stem lit v');
-  wiresEl.append(stemLit);
+  const baseBus = wiresEl.querySelector('.bus');
+  const isCompact = () => org.clientWidth < COMPACT_PX;
+  let compact = isCompact();
 
-  const cols = VERTICALS.map((v, i) => {
-    const x = 10 + i * 20;
-    // grey base drop + lit bus segment (from the centre outwards) + lit drop
-    const drop = el('i', 'drop'); drop.style.left = x + '%';
-    const dropLit = el('i', 'drop lit v'); dropLit.style.left = x + '%';
-    const busLit = el('i', 'lit h');
-    busLit.style.top = '14px'; busLit.style.height = '1px';
-    busLit.style.left = Math.min(50, x) + '%';
-    busLit.style.width = Math.abs(50 - x) + '%';
-    busLit.style.transformOrigin = x < 50 ? 'right' : 'left';
-    wiresEl.append(drop, busLit, dropLit);
+  // Builds the columns and wires for the current set of functions (5 on wide cards, 4 on compact ones).
+  function build() {
+    VERTICALS = compact ? ALL_VERTICALS.filter(v => v.name !== COMPACT_DROP) : ALL_VERTICALS;
+    const n = VERTICALS.length, step = 100 / n;
+    [...wiresEl.children].forEach(w => { if (!w.matches('.stem:not(.lit)') && w !== baseBus) w.remove(); });
+    stemLit.className = 'stem lit v';
+    wiresEl.append(stemLit);
+    baseBus.style.left = step / 2 + '%';
+    baseBus.style.width = (100 - step) + '%';
+    colsEl.innerHTML = '';
+    colsEl.style.gridTemplateColumns = `repeat(${n}, minmax(0, 1fr))`;
+    return VERTICALS.map((v, i) => {
+      const x = step / 2 + i * step;
+      // grey base drop + lit bus segment (from the centre outwards) + lit drop
+      const drop = el('i', 'drop'); drop.style.left = x + '%';
+      const dropLit = el('i', 'drop lit v'); dropLit.style.left = x + '%';
+      const busLit = el('i', 'lit h');
+      busLit.style.top = '14px'; busLit.style.height = '1px';
+      busLit.style.left = Math.min(50, x) + '%';
+      busLit.style.width = Math.abs(50 - x) + '%';
+      busLit.style.transformOrigin = x < 50 ? 'right' : 'left';
+      wiresEl.append(drop, busLit, dropLit);
 
-    const col = el('div', 'org-col');
-    const vert = el('div', 'org-vert');
-    vert.dataset.state = 'idle';
-    const stage = el('span', 'stage', '<span>Queued</span>');
-    vert.append(el('span', 'name', `<span class="full">${v.name}</span><span class="short">${v.short}</span>`), stage);
-    const teams = el('ul', 'org-teams');
-    const teamEls = v.teams.map(t => { const li = el('li', 'org-team', `<span class="dot"></span><span>${t.replace('&', '&amp;')}</span>`); teams.append(li); return li; });
-    col.append(vert, teams);
-    colsEl.append(col);
-    return { v, col, vert, stageText: stage.firstElementChild, teamEls, wires: [busLit, dropLit] };
-  });
+      const col = el('div', 'org-col');
+      const vert = el('div', 'org-vert');
+      vert.dataset.state = 'idle';
+      const stage = el('span', 'stage', '<span>Queued</span>');
+      vert.append(el('span', 'name', `<span class="full">${v.name}</span><span class="short">${v.short}</span>`), stage);
+      const teams = el('ul', 'org-teams');
+      const teamEls = v.teams.map(t => { const li = el('li', 'org-team', `<span class="dot"></span><span>${t.replace('&', '&amp;')}</span>`); teams.append(li); return li; });
+      col.append(vert, teams);
+      colsEl.append(col);
+      return { v, col, vert, stageText: stage.firstElementChild, teamEls, wires: [busLit, dropLit] };
+    });
+  }
+  let cols = build();
 
   // ---- Helpers -----------------------------------------------------------
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
@@ -246,6 +265,8 @@
     taskEl.classList.add('show');
   }
 
+  setLive(0);   // the footer reads the real function count (4 or 5) before anything plays
+
   // ---- Start / pause ------------------------------------------------------
   let visible = false;
   function start() {
@@ -262,5 +283,15 @@
   }, { threshold: 0.35 }).observe(org);
   document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else if (visible) start(); });
   reduce.addEventListener('change', () => { reset(); if (visible) start(); });
+  // Crossing the compact width rebuilds with 4 or 5 functions and restarts cleanly.
+  new ResizeObserver(() => {
+    const next = isCompact();
+    if (next === compact) return;
+    compact = next;
+    stop();
+    cols = build();
+    reset();
+    if (visible && !document.hidden) start();
+  }).observe(org);
 
 })();

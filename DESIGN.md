@@ -358,11 +358,11 @@ A white strip directly under the hero. "Clients include" in Label type on the le
 
 ### Rollout org chart (signature)
 The hero illustration. It's a white Float card headed "how the rollout works", tagged "Illustration".
-- **Structure:** a Harbour Ink "Leadership" node wires out to five functions (Finance, HR, Operations, Product, Marketing), each with three sub-teams.
+- **Structure:** a Harbour Ink "Leadership" node wires out to five functions on wide cards (Finance, HR, Operations, Product, Marketing), each with three sub-teams, and four on compact cards.
 - **First, the rollout:** a wave runs once. Each function steps through Assess, Blueprint, Enable and Govern, then goes Live, and the footer bar fills in the teal-to-orange OKLCH gradient.
 - **Then the loop:** it spotlights one function at a time. An agent completes two tasks, then waits for a named person's approval in Kiln orange.
 - **Colour:** Deep Lagoon marks live and working states; idle states stay ghosted grey.
-- **Narrow cards:** below 500px of card width (a container query), the sub-teams hide and names shorten.
+- **Narrow cards:** below 500px of card width (a container query), the sub-teams hide, names shorten, and HR drops out so four functions show (Finance, Operations, Product, Marketing). Crossing that width rebuilds the chart and restarts it.
 - **Motion limits:** it pauses when off screen or in a background tab. Under reduced motion it shows the finished chart with one approved example.
 - **Content:** all figures in it are illustrative and must stay tagged as an illustration.
 
