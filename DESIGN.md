@@ -357,11 +357,11 @@ Confident and simple: pills that answer the pointer.
 
 ### Client logo strip
 A white strip directly under the hero. "Clients include" in Label type on the left, then the client logos in a slow, continuous loop (about 36s per set). The logos are greyscale at 72% opacity and turn full colour on hover, 44px tall (36px on phones), with soft fades at both edges.
-- **Control:** a 36px round pause and play button beside the strip. The strip also pauses on hover and keyboard focus.
+- **Control:** the strip pauses on hover. There is no pause button (the owner's decision, 2026-11-16).
 - **Reduced motion:** no loop. The logos sit in a static, wrapping row.
 - **Content:** real client logos only, supplied by the client. Duplicate sets used for the loop are hidden from assistive technology.
 
-**The Pause Rule.** Anything that moves for more than five seconds has a visible pause control, stops on hover and focus, and rests completely under reduced motion.
+**The Pause Rule.** Anything that loops stops on hover and rests completely under reduced motion. Only the client logo strip may loop continuously.
 
 ### Example console (signature)
 A white Float panel that plays an illustrative deployment, step by step, in Label type. Its header always says "example". Values in it are illustrative, never presented as a client result. It cycles at a calm pace, rests under reduced motion, and never starts with content hidden.
@@ -393,4 +393,4 @@ Full-width Xanadu Teal, 72px to 120px tall padding, centred Display headline in 
 - **Don't** tile, rotate or animate the X mark, or show it more than once per screen beyond the logo.
 - **Don't** ship Arabic before a native speaker has approved it; when it ships, never more than one line per screen.
 - **Don't** use stock AI imagery (brains, circuits, robots, glowing orbs).
-- **Don't** run any motion for more than five seconds without a visible pause control.
+- **Don't** add continuous motion anywhere except the client logo strip.

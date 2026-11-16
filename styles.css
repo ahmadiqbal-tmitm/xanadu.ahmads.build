@@ -135,7 +135,7 @@ p { margin: 0; }
 }
 @keyframes slide-in { from { transform: translateY(6px); } }
 
-/* clients: logo carousel (pauses on hover, focus, button, reduced motion) */
+/* clients: logo carousel (pauses on hover; static under reduced motion) */
 .clients { background: var(--plain-white); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
 .clients-inner { display: flex; align-items: center; gap: var(--s6); padding-top: var(--s5); padding-bottom: var(--s5); }
 .clients .t-label { flex: none; color: var(--slate); }
@@ -144,20 +144,13 @@ p { margin: 0; }
 .marquee-set { display: flex; align-items: center; gap: var(--s8); padding-right: var(--s8); list-style: none; margin: 0; }
 .marquee-set img { height: 44px; width: auto; filter: grayscale(1); opacity: .72; transition: filter .3s, opacity .3s; }
 .marquee-set li:hover img { filter: none; opacity: 1; }
-.marquee:hover .marquee-track, .marquee:focus-within .marquee-track, .clients.paused .marquee-track { animation-play-state: paused; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-33.3333%); } }
-.marquee-toggle { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--hairline-strong); border-radius: 50%; background: var(--plain-white); color: var(--harbour-ink); cursor: pointer; transition: border-color .15s; }
-.marquee-toggle:hover { border-color: var(--harbour-ink); }
-.marquee-toggle svg { width: 14px; height: 14px; }
-.marquee-toggle .play { display: none; }
-.clients.paused .marquee-toggle .play { display: block; }
-.clients.paused .marquee-toggle .pause { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .marquee { mask-image: none; -webkit-mask-image: none; }
   .marquee-track { animation: none; width: auto; }
   .marquee-set[aria-hidden="true"] { display: none; }
   .marquee-set { flex-wrap: wrap; row-gap: var(--s4); }
-  .marquee-toggle { display: none; }
 }
 
 /* ---------- platforms (asymmetric: AI leads) ---------- */

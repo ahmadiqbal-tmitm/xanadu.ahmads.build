@@ -12,15 +12,6 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && links.classList.contains('open')) { set(false); toggle.focus(); } });
   }
 
-  /* ---------- client logo carousel: pause control ---------- */
-  const clients = document.querySelector('.clients');
-  const mt = clients ? clients.querySelector('.marquee-toggle') : null;
-  if (mt) mt.addEventListener('click', () => {
-    const paused = clients.classList.toggle('paused');
-    mt.setAttribute('aria-pressed', String(paused));
-    mt.setAttribute('aria-label', paused ? 'Play client logos' : 'Pause client logos');
-  });
-
   /* ---------- example console (illustrative, never a client result) ---------- */
   const list = document.getElementById('console');
   if (list) {
