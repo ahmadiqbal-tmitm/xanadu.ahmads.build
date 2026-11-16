@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-16T10:59:31+00:00",
+  "generatedAt": "2026-11-16T11:04:42+00:00",
   "title": "Design System: Xanadu",
   "extensions": {
     "colorMeta": {
@@ -417,7 +417,7 @@
       "refersTo": "button-primary",
       "description": "The one main action per screen. Hover crossfades to the teal-to-orange OKLCH gradient; it never moves.",
       "html": "<a class=\"ds-btn-primary\" href=\"#\">Start the assessment <span aria-hidden=\"true\">→</span></a>",
-      "css": ".ds-btn-primary{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;background:oklch(70.3% 0.198 43);color:oklch(16.4% 0.039 58);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none} .ds-btn-primary::before{content:\"\";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg in oklch,oklch(65.4% 0.112 208),oklch(70.3% 0.198 43));opacity:0;transition:opacity .35s cubic-bezier(.16,1,.3,1)} .ds-btn-primary:hover::before,.ds-btn-primary:focus-visible::before{opacity:1} .ds-btn-primary span{transition:transform .2s} .ds-btn-primary:hover span{transform:translateX(3px)} .ds-btn-primary:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
+      "css": ".ds-btn-primary{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;background:oklch(70.3% 0.198 43);color:oklch(16.4% 0.039 58);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none;transition:color .35s cubic-bezier(.16,1,.3,1)} .ds-btn-primary::before{content:\"\";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg in oklch,oklch(65.4% 0.112 208),oklch(70.3% 0.198 43));opacity:0;transition:opacity .35s cubic-bezier(.16,1,.3,1)} .ds-btn-primary:hover::before,.ds-btn-primary:focus-visible::before{opacity:1} .ds-btn-primary:hover,.ds-btn-primary:focus-visible{color:#fff} .ds-btn-primary span{transition:transform .2s} .ds-btn-primary:hover span{transform:translateX(3px)} .ds-btn-primary:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
     },
     {
       "name": "Ghost Button",
