@@ -39,12 +39,15 @@ Undecided which single claim leads (asked, not yet answered). Confirmed facts it
 
 - **Primary action:** the AI readiness assessment. Booking a call comes after it.
 - **Pages needed:** Home, AI Transformation, About / Team.
-- **Language:** English site with Arabic accents only (no full right-to-left version). Arabic copy needs a native speaker's check before launch.
+- **Language:** English only for now. Arabic may return later as accents, after a native speaker's check.
 - Undecided: whether the assessment captures leads; founder and team names, photos and bios.
 
 ## Brand Commitments
 
-- **Logo:** the Xanadu ring-and-X mark and lowercase wordmark keep their original shapes. Recolouring is allowed; reshaping is not. Brand anchors are the logo's teal and orange.
+- **Logo:** the Xanadu ring-and-X mark and lowercase wordmark keep their original shapes. Recolouring is allowed; reshaping is not.
+- **Colour (pinned by the owner, 2026-11-16):** the sharper v1 brand colours, **teal #00A3B4** and **signal orange #FF6B1A**. Not the original xanadu.co petrol teal (#05657F) and amber (#F6AA1B), and not the muted teals of the first three v2 directions.
+- **Ground (pinned):** light. No black or near-black page backgrounds; the owner finds them "too AI".
+- **Arabic (pinned):** none for now. Add it later, once a native speaker has checked it.
 - **Voice:** plain, executive, declarative; outcomes and control; no hype words.
 - **The owner rejects:** the old xanadu.co look (dated serif headlines, mint cards, template feel, stock AI imagery such as the rainbow brain) and the first concept's dark, techy, generic grid-and-glow look, which had no local character.
 - **Feel references (for feel, never for copying):** Anthropic for warmth and calm confidence; Palantir / Scale AI for institutional, government-grade weight.
@@ -62,7 +65,7 @@ Undecided which single claim leads (asked, not yet answered). Confirmed facts it
 2. Every path ends at the readiness assessment.
 3. Signal four things at once: frontier, enterprise-safe, local, proven. No one of them can be traded away for another.
 4. Show only what is true: label demonstrations, attribute borrowed proof, invent nothing.
-5. Gulf first: Dubai before London, and regional clients and Arabic visible.
+5. Gulf first: Dubai before London, and regional clients visible.
 
 ## Accessibility & Inclusion
 

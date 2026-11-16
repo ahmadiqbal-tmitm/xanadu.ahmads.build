@@ -1,9 +1,9 @@
 /* Preview switcher: flip between the three v2 hero directions (buttons or ← → keys). */
 (function () {
   const PAGES = [
-    { file: 'a-line.html', key: 'A', name: 'Line' },
-    { file: 'b-correspondence.html', key: 'B', name: 'Correspondence' },
-    { file: 'c-certificate.html', key: 'C', name: 'Certificate' },
+    { file: 'd-masterplan.html', key: 'D', name: 'Masterplan' },
+    { file: 'e-board-paper.html', key: 'E', name: 'Board paper' },
+    { file: 'f-exhibition.html', key: 'F', name: 'Exhibition' },
   ];
   const here = location.pathname.split('/').pop() || 'index.html';
   const at = Math.max(0, PAGES.findIndex(p => p.file === here));

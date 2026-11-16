@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xanadu · Direction D: Masterplan</title>
+<meta name="description" content="Concept preview D for the Xanadu v2 homepage hero.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F7F8F7">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --board:#F7F8F7; --white:#FFFFFF; --ink:#0F1A1C; --ink-2:#4A5759; --rule:#D8DEDD; --contour:#E4E8E7;
+  --teal:#00A3B4; --teal-ink:#007C89; --water:#D3EEF1; --orange:#FF6B1A; --orange-ink:#C2410C;
+  --lg-ring:var(--teal); --lg-x:var(--orange); --lg-word:var(--ink);
+  --wrap:1320px; --gutter:clamp(16px,4vw,48px);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --font:"Archivo", system-ui, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--board);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:#BDE9EE;color:var(--ink)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.wide{font-stretch:125%;text-transform:uppercase;letter-spacing:.08em}
+.skip{position:absolute;left:var(--gutter);top:-60px;background:var(--ink);color:#fff;padding:10px 14px;z-index:100;text-decoration:none}
+.skip:focus{top:12px}
+
+.nav{position:relative;z-index:3;background:var(--board);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;gap:40px;height:72px}
+.logo{width:136px;height:29px;display:block}
+.nav ul{display:flex;gap:32px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{text-decoration:none;font-size:15px;color:var(--ink-2);padding:8px 0;transition:color .15s}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 20px;border-radius:2px;font:600 15px/1 var(--font);text-decoration:none;border:0;cursor:pointer;transition:background .15s,transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn-go{background:var(--orange);color:#1A0900}
+.btn-go:hover{background:#FF7F38}
+.btn-sm{height:42px;padding:0 16px;font-size:14px}
+
+/* hero = the plan sheet */
+.hero{position:relative;overflow:hidden;background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='820' viewBox='0 0 1440 820'%3E%3Cg fill='none' stroke='%23E2E7E6' stroke-width='1'%3E%3Cpath d='M-20 120 C 260 60 520 180 820 110 S 1300 60 1480 140'/%3E%3Cpath d='M-20 200 C 280 140 540 260 840 190 S 1300 140 1480 220'/%3E%3Cpath d='M-20 290 C 300 230 560 350 860 280 S 1300 230 1480 310'/%3E%3Cpath d='M-20 390 C 320 330 580 450 880 380 S 1300 330 1480 410'/%3E%3Cpath d='M-20 500 C 340 440 600 560 900 490 S 1300 440 1480 520'/%3E%3Cpath d='M-20 620 C 360 560 620 680 920 610 S 1300 560 1480 640'/%3E%3Cpath d='M-20 740 C 380 680 640 800 940 730 S 1300 680 1480 760'/%3E%3C/g%3E%3C/svg%3E") center top / cover no-repeat, var(--board)}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 470px;gap:clamp(32px,5vw,80px);min-height:780px;padding-top:44px;padding-bottom:28px}
+.copy{position:relative;z-index:2;max-width:640px}
+.copy .wide{font-size:12px;color:var(--teal-ink);font-weight:600;margin:0 0 18px}
+h1{margin:0;font-weight:700;font-size:clamp(38px,4.3vw,62px);line-height:1.02;letter-spacing:-.025em;text-wrap:balance}
+.lede{margin:20px 0 0;max-width:52ch;color:var(--ink-2)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 26px;list-style:none;margin:22px 0 0;padding:0;font-size:14.5px}
+.facts li{display:flex;align-items:center;gap:9px}
+.facts svg{width:20px;height:20px;color:var(--teal-ink);flex:none}
+
+.plan{position:absolute;left:calc(var(--gutter) - 40px);bottom:0;width:min(880px,62%);height:auto;z-index:1}
+.plan .road{fill:#fff;stroke:#C9D0CF;stroke-width:1.2}
+.plan .water{fill:var(--water);stroke:var(--teal);stroke-width:1.5}
+.plan .parcel{stroke:#9AA6A5;stroke-width:1.2;fill:url(#hatch);transition:fill .5s,stroke .4s}
+.plan .parcel.built{fill:url(#built);stroke:var(--teal-ink)}
+.plan .parcel.first{stroke:var(--orange);stroke-width:2.6;fill:url(#first)}
+.plan .util{fill:none;stroke:var(--teal);stroke-width:4;stroke-linecap:round;opacity:.16}
+.plan .util.on{opacity:1}
+.plan text{font-family:var(--font);fill:var(--ink);paint-order:stroke;stroke:#FFFFFF;stroke-width:4px;stroke-linejoin:round}
+.plan .callout text{stroke:none}
+.plan .lp{font-size:10px;font-weight:600;letter-spacing:1.5px;font-stretch:125%;fill:var(--ink-2)}
+.plan .ln{font-size:16px;font-weight:700}
+.plan .lr{font-size:11.5px;fill:var(--teal-ink);font-weight:500}
+.plan .callout{display:none}
+.plan .callout.on{display:inline}
+.plan .callout rect{fill:var(--orange)}
+.plan .callout text{fill:#1A0900;font-size:12px;font-weight:700;letter-spacing:.5px}
+
+/* the drawing sheet (assessment) */
+.sheet{position:relative;z-index:2;align-self:start;background:var(--white);border:1.5px solid var(--ink);box-shadow:0 30px 60px -40px rgba(15,26,28,.45)}
+.tb{display:grid;grid-template-columns:1fr 92px;border-bottom:1.5px solid var(--ink)}
+.tb-title{padding:16px 18px}
+.tb-title h2{margin:0;font-size:19px;font-weight:700;letter-spacing:-.01em}
+.tb-title p{margin:4px 0 0;font-size:13.5px;color:var(--ink-2)}
+.north{border-left:1.5px solid var(--ink);display:grid;place-items:center;gap:2px;padding:8px 0}
+.north svg{width:40px;height:38px}
+.north span{font-size:11px;font-weight:700;letter-spacing:1px;font-stretch:125%}
+.sheet-body{padding:18px 18px 14px}
+.q-progress{margin:0 0 8px;font-size:11.5px;font-weight:600;color:var(--teal-ink);font-stretch:125%;text-transform:uppercase;letter-spacing:.1em}
+.q-title{margin:0 0 14px;font-size:22px;font-weight:600;line-height:1.25;letter-spacing:-.012em}
+.q-options{display:grid;gap:0;border-top:1px solid var(--rule)}
+.q-option{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:52px;padding:12px 4px 12px 12px;border-bottom:1px solid var(--rule);cursor:pointer;font-size:16.5px;transition:background .15s,padding .2s var(--ease)}
+.q-option:hover{background:#EEF8F9;padding-left:16px}
+.q-option[aria-pressed="true"]{background:#E1F4F6}
+.q-option:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
+.q-arrow{width:20px;height:20px;color:var(--teal-ink)}
+.q-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;min-height:32px;font-size:13.5px;color:var(--ink-2)}
+.link-btn{all:unset;cursor:pointer;font-size:14px;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;padding:6px 2px}
+.link-btn:hover{color:var(--ink)}
+.q-result{outline:none}
+.q-result .label{margin:0;font-size:11.5px;font-weight:600;color:var(--orange-ink);font-stretch:125%;text-transform:uppercase;letter-spacing:.1em}
+.q-result .step{margin:4px 0 0;font-size:46px;font-weight:700;letter-spacing:-.03em;line-height:1.02}
+.q-result .copy{margin:12px 0 18px;color:var(--ink-2)}
+.q-result .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.tb-foot{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink)}
+.tb-foot div{padding:9px 12px;font-size:13px}
+.tb-foot div+div{border-left:1px solid var(--rule)}
+.tb-foot span{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-stretch:125%;color:var(--ink-2)}
+.tb-foot b{font-weight:600}
+.issued b{color:var(--orange-ink)}
+
+.proof{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 32px;padding:18px 0 30px;border-top:1px solid var(--rule);font-size:14.5px;color:var(--ink-2)}
+.proof b{color:var(--ink);font-weight:600}
+
+@media (prefers-reduced-motion:no-preference){
+  .animate .plan .parcel{animation:survey .8s var(--ease) both}
+  .animate .plan .parcel:nth-of-type(2){animation-delay:.1s}.animate .plan .parcel:nth-of-type(3){animation-delay:.2s}.animate .plan .parcel:nth-of-type(4){animation-delay:.3s}.animate .plan .parcel:nth-of-type(5){animation-delay:.4s}
+  .animate .sheet{animation:rise .8s var(--ease) .15s both}
+}
+@keyframes survey{from{stroke-dasharray:4 6;stroke-dashoffset:40}}
+@keyframes rise{from{transform:translateY(14px)}}
+
+@media (max-width:1080px){
+  .hero-inner{grid-template-columns:1fr;min-height:0}
+  .sheet{max-width:560px}
+  .plan{position:relative;left:auto;width:100%;margin-top:8px}
+}
+@media (max-width:820px){
+  .nav ul{display:none}
+  .nav .btn{margin-left:auto}
+  .plan .lp,.plan .lr{display:none}
+  .plan .ln{font-size:30px}
+  .plan .callout text{font-size:20px}
+}
+@media (max-width:480px){
+  .nav .btn{height:44px;padding:0 14px}
+  .logo{width:118px;height:25px}
+  .hero-inner{padding-top:28px}
+  .sheet-body{padding:16px 14px 12px}
+  .tb-foot div{padding:8px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#assessment">Skip to the assessment</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#" aria-label="Xanadu home"><svg class="logo" role="img" aria-label="Xanadu"><use href="logo.svg#x-logo"/></svg></a>
+    <ul>
+      <li><a href="#">AI Transformation</a></li>
+      <li><a href="#">How we work</a></li>
+      <li><a href="#">Industries</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <a class="btn btn-go btn-sm" href="#assessment">Start the assessment</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero-inner">
+      <div class="copy">
+        <h1 id="h1">AI transformation for the Gulf’s enterprises and government.</h1>
+        <p class="lede">Planned like infrastructure. We take organisations from AI pilots to Claude and agents running real workflows, phase by phase, governed from day one and delivered in person from Dubai. Canva Enterprise keeps every team on brand as it scales.</p>
+        <ul class="facts">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 10-4-1.7-7-5.6-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 12l2.4 2.4L15.5 9.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Certified Services Partner, Claude Partner Network</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.1-6.5-11a6.5 6.5 0 0113 0c0 4.9-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>Dubai, DIFC · London</li>
+        </ul>
+      </div>
+
+      <div class="sheet" id="assessment" tabindex="-1">
+        <div class="tb">
+          <div class="tb-title">
+            <h2>AI readiness assessment</h2>
+            <p>Free. Five questions, about a minute.</p>
+          </div>
+          <div class="north" aria-hidden="true"><svg viewBox="0 0 77 74"><use href="logo.svg#x-mark"/></svg><span>N</span></div>
+        </div>
+        <div class="sheet-body" data-assessment>
+          <div data-q-stage>
+            <p class="q-progress" data-q-progress aria-live="polite">Question 1 of 5</p>
+            <h3 class="q-title" id="q-title" data-q-title></h3>
+            <div class="q-options" role="group" aria-labelledby="q-title" data-q-options></div>
+            <div class="q-foot">
+              <button type="button" class="link-btn" data-q-back hidden>Back</button>
+              <span>Your answers stay on this page.</span>
+            </div>
+          </div>
+          <div class="q-result" data-q-result hidden tabindex="-1">
+            <p class="label">Start with</p>
+            <p class="step" data-q-step></p>
+            <p class="copy" data-q-copy></p>
+            <div class="row">
+              <a class="btn btn-go" data-q-cta href="#">Book a conversation</a>
+              <button type="button" class="link-btn" data-q-restart>Retake</button>
+            </div>
+          </div>
+        </div>
+        <div class="tb-foot">
+          <div id="status"><span>Status</span><b>Preliminary</b></div>
+          <div><span>Scope</span><b>5 phases</b></div>
+          <div><span>Office</span><b>Dubai, DIFC</b></div>
+        </div>
+      </div>
+
+      <svg class="plan" id="plan" viewBox="0 420 880 380" aria-hidden="true">
+        <defs>
+          <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="9" height="9" fill="#FFFFFF"/><line x1="0" y1="0" x2="0" y2="9" stroke="#C4CDCC" stroke-width="1.4"/></pattern>
+          <pattern id="built" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#E4F5F7"/><rect x="3" y="3" width="9" height="9" fill="#A6DEE5"/></pattern>
+          <pattern id="first" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#FFEDE3"/><rect x="3" y="3" width="9" height="9" fill="#FFC6A6"/></pattern>
+        </defs>
+        <path class="water" d="M0,640 C80,624 170,630 236,654 C304,680 322,736 296,800 L0,800 Z"/>
+        <rect class="road" x="0" y="589" width="880" height="22"/>
+        <rect class="road" x="569" y="420" width="22" height="170"/>
+        <circle class="road" cx="580" cy="600" r="28"/>
+        <circle cx="580" cy="600" r="11" fill="var(--water)" stroke="var(--teal)" stroke-width="1.2"/>
+        <g id="parcels">
+          <path class="parcel" d="M58,472 L202,464 L206,585 L56,585 Z"/>
+          <path class="parcel" d="M220,448 L384,454 L386,585 L218,585 Z"/>
+          <path class="parcel" d="M400,470 L552,462 L560,585 L400,585 Z"/>
+          <path class="parcel" d="M334,615 L560,615 L566,762 L322,762 Z"/>
+          <path class="parcel" d="M604,615 L850,615 L856,784 L608,784 Z"/>
+        </g>
+        <g id="utils">
+          <path class="util" d="M30,600 L200,600"/><path class="util" d="M200,600 L380,600"/><path class="util" d="M380,600 L550,600"/><path class="util" d="M610,600 L730,600"/><path class="util" d="M730,600 L860,600"/>
+        </g>
+        <g id="labels"></g>
+        <g class="callout" id="callout"><rect x="0" y="0" width="112" height="26" rx="2"/><text x="10" y="17.5">START HERE</text></g>
+      </svg>
+    </div>
+    <div class="wrap">
+      <p class="proof"><span><b>Clients include</b> Mohamed bin Zayed University of Artificial Intelligence, American University of Ras Al Khaimah, Government of Ajman, Government of Sharjah.</span><span>Our CEO built the largest B2B partner business on Meta’s platform.</span></p>
+    </div>
+  </section>
+</main>
+
+<script src="assessment.js"></script>
+<script>
+(() => {
+  if (document.visibilityState === 'visible') document.documentElement.classList.add('animate');
+  const { STEPS, mount } = window.XanaduAssessment;
+  const NS = 'http://www.w3.org/2000/svg';
+  const parcels = [...document.querySelectorAll('#parcels .parcel')];
+  const utils = [...document.querySelectorAll('#utils .util')];
+  const labels = document.getElementById('labels');
+  const anchor = [[70, 494], [232, 478], [412, 494], [350, 640], [620, 640]];
+  STEPS.forEach((s, k) => {
+    const [x, y] = anchor[k];
+    const g = document.createElementNS(NS, 'g');
+    g.innerHTML = `<text class="lp" x="${x}" y="${y}">PHASE ${k + 1}</text><text class="ln" x="${x}" y="${y + 21}">${s.name}</text><text class="lr" x="${x}" y="${y + 38}">${s.role}</text>`;
+    labels.appendChild(g);
+  });
+  const callout = document.getElementById('callout');
+  const status = document.querySelector('#status b');
+  function plan(first) {
+    parcels.forEach((p, k) => { p.classList.toggle('built', first !== null && k < first); p.classList.toggle('first', k === first); });
+    if (first === null) { callout.classList.remove('on'); return; }
+    const b = parcels[first].getBBox();
+    callout.setAttribute('transform', `translate(${b.x + b.width / 2 - 56}, ${b.y - 34})`);
+    callout.classList.add('on');
+  }
+  mount(document.querySelector('[data-assessment]'), {
+    onRender: i => utils.forEach((u, k) => u.classList.toggle('on', k < i)),
+    onComplete: res => {
+      utils.forEach(u => u.classList.add('on'));
+      plan(res.step);
+      status.textContent = 'Issued'; status.parentElement.classList.add('issued');
+    },
+    onReset: () => { plan(null); status.textContent = 'Preliminary'; status.parentElement.classList.remove('issued'); },
+  });
+})();
+</script>
+<script src="switcher.js"></script>
+</body>
+</html>
