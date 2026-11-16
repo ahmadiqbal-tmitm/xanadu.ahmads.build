@@ -54,13 +54,13 @@ Captured from the brand interview on 2026-11-16. Every design and content decisi
 |---|---|
 | **Mode** | **Light-first.** Warm paper and sand backgrounds as the default. Ink is used sparingly, for weight (one or two sections at most). No grid-and-glow. |
 | **Logo** | Unchanged shapes. Teal ring, orange X. A dark-ink wordmark on light backgrounds. |
-| **Colour** | Keep the logo's teal and orange as the brand anchors, used sparingly as accents on warm neutrals (paper, sand, stone, ink). The orange reads as Gulf sun and the teal as sea. The palette should feel earned, not neon. |
-| **Type** | A confident, refined sans for the main typeface and an editorial companion for big statements. Avoid the old DM Serif look and the v1 everything-mono look; mono only for small data labels, if at all. **Arabic accents** in a quality Arabic face (e.g. IBM Plex Sans Arabic or a Kufi style), used for key statements beside the English. |
-| **Local character** | Arabic accent lines. Restrained geometric patterning drawn from the X mark and regional geometry, used as structure rather than decoration. Dubai (DIFC) shown prominently. Regional client names. |
+| **Colour** | **Pinned (round 2):** the sharper v1 teal **#00A3B4** and signal orange **#FF6B1A**, on light grounds. Not the original xanadu.co petrol teal and amber. No black or near-black page backgrounds. |
+| **Type** | A confident, refined sans for the main typeface and an editorial companion for big statements. Avoid the old DM Serif look and the v1 everything-mono look; mono only for small data labels, if at all. |
+| **Local character** | Dubai (DIFC) shown prominently, regional client names, Gulf-first copy. No Arabic for now (owner's decision, round 2). |
 | **Imagery** | No stock AI imagery. Use real people and real places once available; until then use typography, geometry and plain product-like diagrams. |
 | **Tone of voice** | Plain, executive and declarative. Short sentences. No hype words ("revolutionary", "unleash"). Talk about outcomes and control. |
 | **Interaction** | Restrained motion. The assessment is the one rich interactive element and should feel premium. |
-| **Arabic scope** | **Accents only.** The site is in English; Arabic appears as accents, not a full right-to-left version. |
+| **Arabic scope** | **None for now.** English only; revisit accents later with a native speaker. |
 
 ## 8. Open questions
 
