@@ -107,7 +107,7 @@ spacing:
   "10": "128px"
   gutter: "clamp(16px, 4vw, 40px)"
   section: "clamp(56px, 7vw, 96px)"
-  wrap: "1200px"
+  wrap: "1280px"
 components:
   button-primary:
     backgroundColor: "{colors.signal-orange}"
@@ -150,11 +150,11 @@ components:
     textColor: "{colors.harbour-ink}"
     rounded: "{rounded.lg}"
     padding: "clamp(24px, 3vw, 40px)"
-  console:
+  rollout-chart:
     backgroundColor: "{colors.plain-white}"
     textColor: "{colors.harbour-ink}"
-    typography: "{typography.label}"
     rounded: "{rounded.lg}"
+    width: "min(580px, 48%)"
   nav:
     backgroundColor: "{colors.morning-haze}"
     textColor: "{colors.slate}"
@@ -210,7 +210,7 @@ A near-neutral daylight palette, faintly cooled toward the teal, with two satura
 
 ### Neutral
 - **Morning Haze** (oklch(97.7% 0.002 165), hex #F6F8F7): the page ground, the nav, and sector-card fills inside white sections.
-- **Plain White** (oklch(100% 0 0), hex #FFFFFF): raised surfaces (cards, the console, the result panel, quiz fields) and alternate sections.
+- **Plain White** (oklch(100% 0 0), hex #FFFFFF): raised surfaces (cards, the rollout chart, the result panel, quiz fields) and alternate sections.
 - **Mist** (oklch(96.5% 0.003 175), hex #F1F4F3): a quiet alternate surface where two white planes would merge.
 - **Pale Stone** (oklch(94.2% 0.006 183), hex #E8EDEC): tracks, meters, dial backgrounds and inset wells.
 - **Harbour Ink** (oklch(18.9% 0.011 217), hex #0E1517): all primary text, selected choice pills, numbered step dots. It is a text colour, never a page ground.
@@ -238,7 +238,7 @@ A near-neutral daylight palette, faintly cooled toward the teal, with two satura
 **Body Font:** Geist
 **Label/Mono Font:** Geist Mono (with ui-monospace, SF Mono, Menlo)
 
-**Character:** A single engineered sans carries everything, from tight, heavy statements to plain reading text. Mono appears only where a machine would speak: labels, the example console, measurements.
+**Character:** A single engineered sans carries everything, from tight, heavy statements to plain reading text. Mono appears only where a machine would speak: labels, stage tags and agent notes in the rollout chart, measurements.
 
 ### Hierarchy
 - **Display** (650, 46px to 88px fluid, line-height 0.92, -0.04em): the hero headline, and the closing statement on the closing band. One per screen.
@@ -251,7 +251,7 @@ A near-neutral daylight palette, faintly cooled toward the teal, with two satura
 - **Body** (400, 17px, 1.55): running text, max 65ch.
 - **Body Small** (400, 15px, 1.5): card copy, nav links and choices.
 - **Caption** (400, 13px, 1.5): footnotes, sources and helper text. Never below 13px.
-- **Label** (Geist Mono, 500, 12px, uppercase, 0.12em): inner-page credential lines, data labels and console text. Never below 11px.
+- **Label** (Geist Mono, 500, 12px, uppercase, 0.12em): inner-page credential lines and data labels. Never below 11px, except inside the rollout chart illustration, whose stage tags run 9.5px to 10.5px.
 
 ### Named Rules
 **The Short Copy Rule.** A section is a headline, at most two sentences and one action. If a hero needs a third sentence, the headline isn't finished.
@@ -273,11 +273,11 @@ Arabic is **off** until a native speaker has checked the copy (PRODUCT.md). When
 
 ## Layout
 
-A centred column of 1200px with a fluid side gutter (16px to 40px). Sections stack vertically with firm, even padding (56px to 96px top and bottom; heading to content 28px to 44px), alternating Morning Haze and Plain White grounds to separate them without heavy rules. One Night Lagoon band, the close, ends the page.
+A centred column of 1280px with a fluid side gutter (16px to 40px). Sections stack vertically with firm, even padding (56px to 96px top and bottom; heading to content 28px to 44px), alternating Morning Haze and Plain White grounds to separate them without heavy rules. One Night Lagoon band, the close, ends the page.
 
 The spacing rhythm is a 4px base: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128. Use 8 to 16 inside components, 24 to 48 between related blocks, and the section value between sections. Always leave more space above a heading than below it.
 
-Grids are simple: two columns for split content (hero copy and console; the two platform layers), three for parallel items (sectors, proof points), four or five for figures and steps. Below 1000px, split layouts stack copy first; below 820px every grid becomes one column and the nav folds into a menu. Step tracks turn from horizontal to vertical.
+Grids are simple: two columns for split content (hero copy beside the rollout chart, which takes min(580px, 48%) of the row), three for parallel items (sectors, proof points), four or five for figures and steps. Below 1000px, split layouts stack copy first; below 820px every grid becomes one column and the nav folds into a menu. Step tracks turn from horizontal to vertical.
 
 **The One Idea Rule.** Each section carries one idea at one scale. A dense section, such as the assessment, is followed by a quiet one.
 
@@ -285,11 +285,11 @@ Grids are simple: two columns for split content (hero copy and console; the two 
 
 ## Elevation & Depth
 
-Mostly flat, with tonal layering. White surfaces sit on Morning Haze, separated by Hairline borders. Shadows are soft, offset downward and low in opacity. They appear on two things: the floating example console, and cards that lift on hover. Nothing glows, and no shadow has zero offset.
+Mostly flat, with tonal layering. White surfaces sit on Morning Haze, separated by Hairline borders. Shadows are soft, offset downward and low in opacity. They appear on two things: the floating rollout chart and result panel, and cards that lift on hover. Nothing glows, and no shadow has zero offset.
 
 ### Shadow Vocabulary
 - **Lift** (`box-shadow: 0 20px 40px -30px oklch(18.9% 0.011 217 / 0.25)`): cards on hover, together with a 2px upward move.
-- **Float** (`box-shadow: 0 1px 0 oklch(18.9% 0.011 217 / 0.04), 0 30px 60px -34px oklch(18.9% 0.011 217 / 0.28)`): the example console and the result panel at rest.
+- **Float** (`box-shadow: 0 1px 0 oklch(18.9% 0.011 217 / 0.04), 0 30px 60px -34px oklch(18.9% 0.011 217 / 0.28)`): the rollout chart and the result panel at rest.
 
 ### Named Rules
 **The No-Glow Rule.** No radial spotlights, blurred colour blobs or neon edges. Depth comes from a border, a soft offset shadow, or a change of ground.
@@ -299,7 +299,7 @@ Mostly flat, with tonal layering. White surfaces sit on Morning Haze, separated 
 Gently rounded, never bubbly. There are four radii:
 - **Small (6px):** tags and small index marks.
 - **Medium (14px):** fields, inset wells and mini panels.
-- **Large (20px):** cards, the console and the result panel.
+- **Large (20px):** cards, the rollout chart and the result panel.
 - **Pill (999px):** every button, chip and choice.
 
 Borders are 1px Hairline, or Hairline Strong for interactive outlines. A coloured top rule of 2px may mark a card's subject: Signal Orange for the AI layer, Xanadu Teal for the creative layer. Never a coloured side stripe.
@@ -354,10 +354,17 @@ A white strip directly under the hero. "Clients include" in Label type on the le
 - **Reduced motion:** no loop. The logos sit in a static, wrapping row.
 - **Content:** real client logos only, supplied by the client. Duplicate sets used for the loop are hidden from assistive technology.
 
-**The Pause Rule.** Anything that loops stops on hover and rests completely under reduced motion. Only the client logo strip may loop continuously.
+**The Pause Rule.** Only two things loop: the client logo strip, which stops on hover, and the hero rollout chart, which stops off screen. Both rest completely under reduced motion.
 
-### Example console (signature)
-A white Float panel that plays an illustrative deployment, step by step, in Label type. Its header always says "example". Values in it are illustrative, never presented as a client result. It cycles at a calm pace, rests under reduced motion, and never starts with content hidden.
+### Rollout org chart (signature)
+The hero illustration. It's a white Float card headed "how the rollout works", tagged "Illustration".
+- **Structure:** a Harbour Ink "Leadership" node wires out to five functions (Finance, HR, Operations, Product, Marketing), each with three sub-teams.
+- **First, the rollout:** a wave runs once. Each function steps through Assess, Blueprint, Enable and Govern, then goes Live, and the footer bar fills in the teal-to-orange OKLCH gradient.
+- **Then the loop:** it spotlights one function at a time. An agent completes two tasks, then waits for a named person's approval in Kiln orange.
+- **Colour:** Deep Lagoon marks live and working states; idle states stay ghosted grey.
+- **Narrow cards:** below 500px of card width (a container query), the sub-teams hide and names shorten.
+- **Motion limits:** it pauses when off screen or in a background tab. Under reduced motion it shows the finished chart with one approved example.
+- **Content:** all figures in it are illustrative and must stay tagged as an illustration.
 
 ### Readiness result
 A Plain White panel with a Pale Stone dial ring filling in Signal Orange, a Figure score, a Deep Lagoon tier line, and one primary button. It stays sticky beside the questions on desktop, and sits inline on mobile.
@@ -390,4 +397,4 @@ The official partner badges, as issued by each programme, sit in a row under the
 - **Don't** tile, rotate or animate the X mark, or show it more than once per screen beyond the logo.
 - **Don't** ship Arabic before a native speaker has approved it; when it ships, never more than one line per screen.
 - **Don't** use stock AI imagery (brains, circuits, robots, glowing orbs).
-- **Don't** add continuous motion anywhere except the client logo strip.
+- **Don't** add continuous motion anywhere except the client logo strip and the hero rollout chart.

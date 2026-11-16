@@ -52,11 +52,34 @@
         </ul>
       </div>
 
-      <div class="console" role="img" aria-label="Illustrative example of a deployment moving through the five steps">
-        <div class="console-head"><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span><span>example deployment</span><span class="tag">example</span></div>
-        <ol class="console-body" id="console" aria-hidden="true"></ol>
-        <div class="console-foot" aria-hidden="true"><span class="meter"><i id="console-meter"></i></span><span id="console-status">starting</span></div>
+      <figure class="org" id="org" data-phase="idle" aria-label="Illustration: AI rolled out across Finance, HR, Operations, Product and Marketing, with agents doing work in each team and a person approving the result.">
+      <div class="org-head"><span>how the rollout works</span><span class="tag">Illustration</span></div>
+
+      <div class="org-chart" aria-hidden="true">
+        <div class="org-lead">Leadership</div>
+        <div class="org-wires" id="org-wires">
+          <i class="stem"></i><i class="bus"></i>
+        </div>
+        <div class="org-cols" id="org-cols"></div>
       </div>
+
+      <div class="org-feed" aria-hidden="true">
+        <div class="org-legend show" id="org-legend">
+          <div class="label"><span>Rollout</span><span>one function at a time</span></div>
+          <ol><li>Assess</li><li>Blueprint</li><li>Enable</li><li>Govern</li></ol>
+          <p>Every function goes through the same four stages before agents go live.</p>
+        </div>
+        <div class="org-task" id="org-task">
+          <div class="label"><b id="org-task-where"></b><span>Agent task</span></div>
+          <ol id="org-task-steps"></ol>
+        </div>
+      </div>
+
+      <div class="org-foot" aria-hidden="true">
+        <div class="org-bar"><i id="org-bar"></i></div>
+        <span class="org-count" id="org-count">0 of 5 functions live</span>
+      </div>
+    </figure>
     </div>
   </section>
 

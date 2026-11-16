@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-16T11:08:02+00:00",
+  "generatedAt": "2026-11-16T11:14:15+00:00",
   "title": "Design System: Xanadu",
   "extensions": {
     "colorMeta": {
@@ -322,7 +322,7 @@
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Mono credential line, data labels, console text; never an eyebrow."
+        "purpose": "Mono inner-page credential lines and data labels; never an eyebrow."
       }
     },
     "shadows": [
@@ -334,7 +334,7 @@
       {
         "name": "float",
         "value": "0 1px 0 oklch(18.9% 0.011 217 / 0.04), 0 30px 60px -34px oklch(18.9% 0.011 217 / 0.28)",
-        "purpose": "Example console and result panel at rest."
+        "purpose": "Rollout chart and result panel at rest."
       }
     ],
     "motion": [
@@ -349,11 +349,6 @@
         "purpose": "Colour and 1-3px moves on buttons, links, rows."
       },
       {
-        "name": "entrance",
-        "value": "450-800ms, transform only, from visible",
-        "purpose": "Console lines, hero, cards. Never fade from zero opacity."
-      },
-      {
         "name": "reduced-motion",
         "value": "all loops stop; entrances removed",
         "purpose": "prefers-reduced-motion: reduce."
@@ -362,6 +357,11 @@
         "name": "marquee",
         "value": "36s per logo set, linear, infinite",
         "purpose": "Client logo strip only; pauses on hover; off under reduced motion."
+      },
+      {
+        "name": "rollout-chart",
+        "value": "one rollout wave (~2.5s), then a spotlight loop (~6s per function), ease cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Hero illustration only; pauses off screen and in background tabs; finished static state under reduced motion."
       }
     ],
     "breakpoints": [
@@ -379,7 +379,7 @@
       },
       {
         "name": "wrap",
-        "value": "1200px"
+        "value": "1280px"
       }
     ],
     "patterns": [
@@ -468,12 +468,12 @@
       "css": ".ds-nav{display:flex;align-items:center;gap:28px;height:68px;padding:0 24px;background:oklch(97.7% 0.002 165 / 0.85);backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid oklch(18.9% 0.011 217 / 0.09);font:400 14px/1 Geist,system-ui,sans-serif} .ds-nav-brand{font-weight:600;font-size:18px;color:oklch(18.9% 0.011 217);margin-right:auto} .ds-nav a{color:oklch(49.6% 0.020 220);text-decoration:none;transition:color .15s} .ds-nav a:hover{color:oklch(18.9% 0.011 217)} .ds-nav .ds-nav-cta{height:42px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:oklch(70.3% 0.198 43);color:oklch(16.4% 0.039 58);font-weight:500} .ds-nav a:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
     },
     {
-      "name": "Example Console",
+      "name": "Rollout Org Chart",
       "kind": "custom",
-      "refersTo": "console",
-      "description": "Signature panel playing an illustrative deployment; always labelled example.",
-      "html": "<div class=\"ds-console\"><div class=\"ds-console-head\"><span>example deployment</span><span class=\"ds-live\">example</span></div><ol><li><i>›</i><span><em>assess</em> workflows mapped</span><b>42</b></li><li><i>›</i><span><em>enable</em> brand kit locked</span><b>✓</b></li></ol><div class=\"ds-meter\"><span></span></div></div>",
-      "css": ".ds-console{width:420px;max-width:100%;border-radius:20px;border:1px solid oklch(18.9% 0.011 217 / 0.16);background:oklch(100% 0 0);box-shadow:0 1px 0 oklch(18.9% 0.011 217 / 0.04),0 30px 60px -34px oklch(18.9% 0.011 217 / 0.28);font:400 13px/1.5 'Geist Mono',ui-monospace,monospace;color:oklch(18.9% 0.011 217)} .ds-console-head{display:flex;justify-content:space-between;padding:14px 16px;border-bottom:1px solid oklch(18.9% 0.011 217 / 0.09);color:oklch(49.6% 0.020 220);font-size:12px} .ds-live{color:oklch(53.6% 0.092 208);text-transform:uppercase;letter-spacing:.12em;font-size:11px} .ds-console ol{list-style:none;margin:0;padding:12px 16px} .ds-console li{display:grid;grid-template-columns:18px 1fr auto;gap:10px;padding:7px 0;border-bottom:1px dashed oklch(18.9% 0.011 217 / 0.09)} .ds-console i{font-style:normal;color:oklch(53.6% 0.092 208)} .ds-console em{font-style:normal;color:oklch(49.6% 0.020 220)} .ds-console b{font-weight:400;color:oklch(49.6% 0.020 220)} .ds-meter{margin:4px 16px 16px;height:4px;border-radius:4px;background:oklch(94.2% 0.006 183);overflow:hidden} .ds-meter span{display:block;width:60%;height:100%;background:linear-gradient(90deg in oklch,oklch(65.4% 0.112 208),oklch(70.3% 0.198 43))}"
+      "refersTo": "rollout-chart",
+      "description": "Signature hero illustration: leadership wired to five functions that roll out, then agents work with human approval. Static preview of the finished state.",
+      "html": "<figure class=\"ds-org\"><div class=\"ds-org-head\"><span>how the rollout works</span><span class=\"tag\">Illustration</span></div><div class=\"ds-org-lead\">Leadership</div><div class=\"ds-org-cols\"><div class=\"spot\"><b>Finance</b><i>Live</i></div><div><b>HR</b><i>Live</i></div><div><b>Ops</b><i>Live</i></div><div><b>Product</b><i>Live</i></div><div><b>Mktg</b><i>Live</i></div></div><div class=\"ds-org-foot\"><span class=\"bar\"><span></span></span><span>5 of 5 functions live</span></div></figure>",
+      "css": ".ds-org{margin:0;width:420px;max-width:100%;background:#fff;border:1px solid oklch(18.9% 0.011 217 / 0.12);border-radius:20px;overflow:hidden;font-family:Geist,system-ui,sans-serif;box-shadow:0 1px 0 oklch(18.9% 0.011 217 / 0.04),0 30px 60px -34px oklch(18.9% 0.011 217 / 0.28)} .ds-org-head{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid oklch(18.9% 0.011 217 / 0.12);font:400 11px/1 'Geist Mono',monospace;color:oklch(63.5% 0.016 205)} .ds-org-head .tag{letter-spacing:.14em;text-transform:uppercase;color:oklch(53.6% 0.092 208)} .ds-org-lead{width:max-content;margin:18px auto 14px;padding:8px 16px;border-radius:10px;background:oklch(18.9% 0.011 217);color:#fff;font:600 12.5px/1 Geist,system-ui,sans-serif} .ds-org-cols{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:0 12px 16px} .ds-org-cols div{border:1px solid oklch(18.9% 0.011 217 / 0.12);border-radius:10px;padding:9px 4px;text-align:center} .ds-org-cols div.spot{border-color:oklch(53.6% 0.092 208);background:oklch(53.6% 0.092 208 / 0.08)} .ds-org-cols b{display:block;font:600 11.5px/1.1 Geist,system-ui,sans-serif;color:oklch(18.9% 0.011 217)} .ds-org-cols i{display:block;margin-top:6px;font:400 9.5px/1 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase;font-style:normal;color:oklch(53.6% 0.092 208)} .ds-org-foot{display:flex;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid oklch(18.9% 0.011 217 / 0.12);font:400 11px/1 'Geist Mono',monospace;color:oklch(49.6% 0.020 220)} .ds-org-foot .bar{flex:1;height:3px;border-radius:3px;background:oklch(94.2% 0.006 183);overflow:hidden} .ds-org-foot .bar span{display:block;height:100%;background:linear-gradient(90deg in oklch,oklch(65.4% 0.112 208),oklch(70.3% 0.198 43))}"
     },
     {
       "name": "Closing Band",
@@ -567,7 +567,7 @@
       },
       {
         "name": "The Pause Rule",
-        "body": "Anything that loops stops on hover and rests completely under reduced motion. Only the client logo strip may loop continuously.",
+        "body": "Only two things loop: the client logo strip, which stops on hover, and the hero rollout chart, which stops off screen. Both rest completely under reduced motion.",
         "section": "components"
       }
     ],
@@ -591,7 +591,7 @@
       "**Don't** tile, rotate or animate the X mark, or show it more than once per screen beyond the logo.",
       "**Don't** ship Arabic before a native speaker has approved it; when it ships, never more than one line per screen.",
       "**Don't** use stock AI imagery (brains, circuits, robots, glowing orbs).",
-      "**Don't** add continuous motion anywhere except the client logo strip."
+      "**Don't** add continuous motion anywhere except the client logo strip and the hero rollout chart."
     ]
   }
 }
