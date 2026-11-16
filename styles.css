@@ -211,6 +211,7 @@ a.card:hover .more .arr { transform: translateX(3px); }
 /* ---------- sectors ---------- */
 .sectors { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s4); }
 .sectors .card { background: var(--plain-white); }
+.section.white .sectors .card { background: var(--morning-haze); }
 .chips { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); margin-top: var(--s6); }
 .chips .t-caption { margin-right: var(--s2); }
 .chip { display: inline-flex; padding: 7px 12px; border: 1px solid var(--hairline); border-radius: var(--r-pill); font-size: .9375rem; }
