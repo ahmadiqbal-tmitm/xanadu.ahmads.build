@@ -1,134 +1,87 @@
+/* Xanadu v2: nav, example console, readiness check. Content is visible without this script. */
 (() => {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- mobile nav ---------- */
   const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  toggle?.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-  });
-  links?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    links.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }));
+  const links = document.getElementById('nav-links');
+  if (toggle && links) {
+    const set = open => { links.classList.toggle('open', open); toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
+    toggle.addEventListener('click', () => set(!links.classList.contains('open')));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && links.classList.contains('open')) { set(false); toggle.focus(); } });
+  }
 
-  /* ---------- hero console: an example deployment run ---------- */
-  const steps = [
-    ['›', 'assess', 'workflows mapped across 6 functions', '42'],
-    ['›', 'assess', 'brand assets audited', '1,180'],
-    ['›', 'blueprint', 'business case + costed roadmap', 'ready'],
-    ['›', 'enable', 'Canva Enterprise seats provisioned', '380'],
-    ['›', 'enable', 'brand kit locked, templates published', '✓'],
-    ['×', 'build', 'Claude agent: RFP first drafts', 'live'],
-    ['×', 'build', 'human approval gate → legal@', 'on'],
-    ['›', 'govern', 'licence + cost dashboard', 'live'],
-  ];
+  /* ---------- example console (illustrative, never a client result) ---------- */
   const list = document.getElementById('console');
-  const meter = document.getElementById('consoleMeter');
-  const status = document.getElementById('consoleStatus');
-
-  function runConsole() {
-    list.innerHTML = '';
-    meter.style.width = '0';
-    status.textContent = 'running…';
-    if (reduce) {
-      steps.forEach(addStep);
-      meter.style.width = '100%';
-      status.textContent = 'in production';
-      return;
-    }
-    let i = 0;
-    const tick = () => {
-      if (i < steps.length) {
-        addStep(steps[i]);
-        i++;
-        meter.style.width = `${(i / steps.length) * 100}%`;
-        status.textContent = i === steps.length ? 'in production' : `step ${i}/${steps.length}`;
-        setTimeout(tick, 650 + Math.random() * 350);
-      } else {
-        setTimeout(runConsole, 4200);
-      }
+  if (list) {
+    const steps = [
+      ['›', 'assess', 'workflows mapped across functions', '42'],
+      ['›', 'blueprint', 'business case and costed roadmap', 'ready'],
+      ['›', 'enable', 'Claude provisioned, SSO and policies set', 'done'],
+      ['›', 'enable', 'champions trained in every function', '24'],
+      ['×', 'govern', 'usage baseline and cost guardrails', 'on'],
+      ['×', 'build', 'agent: RFP first drafts', 'in review'],
+      ['×', 'build', 'human approval gate before send', 'on'],
+    ];
+    const meter = document.getElementById('console-meter'), status = document.getElementById('console-status');
+    const add = ([icon, phase, text, val]) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="ic${icon === '×' ? ' x' : ''}">${icon}</span><span><em>${phase}</em> ${text}</span><span class="v">${val}</span>`;
+      list.appendChild(li);
     };
-    setTimeout(tick, 400);
+    const run = () => {
+      list.innerHTML = ''; meter.style.width = '0';
+      if (reduce) { steps.forEach(add); meter.style.width = '100%'; status.textContent = 'example complete'; return; }
+      let i = 0;
+      const tick = () => {
+        if (i < steps.length) {
+          add(steps[i++]);
+          meter.style.width = `${(i / steps.length) * 100}%`;
+          status.textContent = i === steps.length ? 'example complete' : `step ${i} of ${steps.length}`;
+          setTimeout(tick, 900);
+        } else setTimeout(run, 5000);
+      };
+      setTimeout(tick, 500);
+    };
+    run();
   }
-  function addStep([icon, phase, text, val]) {
-    const li = document.createElement('li');
-    li.innerHTML = `<span class="ic ${icon === '×' ? 'x' : ''}">${icon}</span>` +
-      `<span class="t"><em>${phase}</em> ${text}</span><span class="v">${val}</span>`;
-    list.appendChild(li);
-  }
-  if (list) runConsole();
 
   /* ---------- readiness check ---------- */
   const quiz = document.getElementById('quiz');
-  const dial = document.getElementById('dial');
-  const scoreEl = document.getElementById('score');
-  const tierEl = document.getElementById('tier');
-  const adviceEl = document.getElementById('advice');
-  const ctaEl = document.getElementById('resultCta');
-  const MAX = 15;
-
-  const tiers = [
-    { min: 0,  name: 'Exploring', step: 'Assess', copy: 'Start with a free Assess. We map where AI and creative tooling would pay off first — before you spend anything.' },
-    { min: 35, name: 'Experimenting', step: 'Blueprint', copy: 'You have momentum but no plan. A Blueprint turns pilots into a costed roadmap and a business case with a date on it.' },
-    { min: 60, name: 'Scaling', step: 'Enable + Govern', copy: 'Time to roll out properly: deploy, train, adopt to target — with brand, cost and policy controls from day one.' },
-    { min: 85, name: 'Production‑ready', step: 'Build', copy: 'You’re ready for agents in production. We integrate Claude into core workflows, function by function.' },
-  ];
-
-  let animFrame;
-  function animateNumber(el, to) {
-    cancelAnimationFrame(animFrame);
-    const from = Number(el.textContent) || 0;
-    if (reduce) { el.textContent = to; return; }
-    const t0 = performance.now();
-    const step = now => {
-      const k = Math.min(1, (now - t0) / 600);
-      el.textContent = Math.round(from + (to - from) * (1 - Math.pow(1 - k, 3)));
-      if (k < 1) animFrame = requestAnimationFrame(step);
-    };
-    animFrame = requestAnimationFrame(step);
-  }
-
-  quiz?.addEventListener('change', e => {
-    e.target.closest('fieldset')?.classList.add('done');
-    const answered = [...quiz.querySelectorAll('input:checked')];
-    const total = answered.reduce((s, i) => s + Number(i.value), 0);
-    const pct = Math.round((total / MAX) * 100);
-    dial.style.setProperty('--p', pct);
-    animateNumber(scoreEl, pct);
-    const all = answered.length === 5;
-    const tier = [...tiers].reverse().find(t => pct >= t.min);
-    tierEl.textContent = all ? `${tier.name} · start with ${tier.step}` : `${answered.length}/5 answered`;
-    adviceEl.textContent = all ? tier.copy : 'Keep going — your recommended starting step appears when all five are answered.';
-    if (all) {
-      ctaEl.textContent = `Talk to us about ${tier.step} →`;
-      ctaEl.href = `mailto:hello@xanadu.co?subject=${encodeURIComponent(`Readiness check: ${pct}/100 (${tier.name})`)}`;
-    }
-  });
-
-  /* ---------- count-up stats + scroll reveal ---------- */
-  const revealTargets = document.querySelectorAll('.section-head, .layer, .stat, .track li, .sectors article, .edge article, .manifesto li, .cta-inner, .quiz, .result');
-  revealTargets.forEach(el => el.classList.add('reveal'));
-
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      el.classList.add('in');
-      const num = el.querySelector?.('[data-count]');
-      if (num && !reduce) {
-        const to = Number(num.dataset.count), suf = num.dataset.suffix || '';
-        const t0 = performance.now();
-        const f = now => {
-          const k = Math.min(1, (now - t0) / 1200);
-          num.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))) + suf;
-          if (k < 1) requestAnimationFrame(f);
-        };
-        requestAnimationFrame(f);
+  if (quiz) {
+    const dial = document.getElementById('dial'), scoreEl = document.getElementById('score');
+    const tierEl = document.getElementById('tier'), adviceEl = document.getElementById('advice'), cta = document.getElementById('result-cta');
+    const sets = [...quiz.querySelectorAll('fieldset')];
+    const MAX = 15;
+    const tiers = [
+      { min: 0, step: 'Assess', copy: 'Start with the free Assess. We map where AI pays off first, before you spend anything.' },
+      { min: 35, step: 'Blueprint', copy: 'You have momentum but no plan. A Blueprint turns pilots into a costed roadmap with a date on it.' },
+      { min: 60, step: 'Enable', copy: 'You are ready to launch. Enable deploys, trains and adopts to target, with Govern keeping risk and spend in check.' },
+      { min: 85, step: 'Build', copy: 'You are ready for agents in production. Build integrates Claude into core workflows, one function at a time.' },
+    ];
+    quiz.addEventListener('change', e => {
+      e.target.closest('fieldset')?.classList.add('done');
+      const picked = sets.map(f => f.querySelector('input:checked'));
+      const answered = picked.filter(Boolean).length;
+      if (answered < sets.length) {
+        dial.style.setProperty('--p', (answered / sets.length) * 100);
+        scoreEl.textContent = answered; dial.querySelector('.dial-num span').textContent = `of ${sets.length}`;
+        tierEl.textContent = `${answered} of ${sets.length} answered`;
+        return;
       }
-      io.unobserve(el);
+      const total = picked.reduce((s, i) => s + Number(i.value), 0);
+      const pct = Math.round((total / MAX) * 100);
+      const t = [...tiers].reverse().find(x => pct >= x.min);
+      dial.style.setProperty('--p', pct);
+      scoreEl.textContent = pct; dial.querySelector('.dial-num span').textContent = 'of 100';
+      tierEl.textContent = `Start with ${t.step}`;
+      adviceEl.textContent = t.copy;
+      const lines = sets.map((f, k) => `${f.querySelector('legend').textContent} ${picked[k].parentElement.textContent.trim()}`);
+      const subject = `AI readiness: ${t.step} (${pct}/100)`;
+      const body = `Hello Xanadu,\n\nI took the readiness check on your site.\n\n${lines.join('\n')}\n\nRecommended first step: ${t.step}.\n`;
+      cta.href = `mailto:hello@xanadu.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      cta.innerHTML = `Book a conversation about ${t.step} <span class="arr" aria-hidden="true">→</span>`;
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-  revealTargets.forEach(el => io.observe(el));
+  }
 })();
