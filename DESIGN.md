@@ -320,7 +320,7 @@ The system has exactly two pattern devices. Both are optional, and both are quie
 Confident and simple: pills that answer the pointer.
 - **Shape:** pill (999px), 48px tall (42px in the nav), padding 14px 22px, label in Button type.
 - **Primary:** Signal Orange with Char text. One per screen, for the main action: start the assessment, or book a conversation.
-- **Hover / Focus:** buttons never move. On hover and keyboard focus the primary button crossfades (350ms) from Signal Orange to the "sticks." gradient, `linear-gradient(90deg in oklch, Xanadu Teal, Signal Orange)`; its text fades from Char to Plain White at the same time (the owner's choice; white reaches about 3:1 on the gradient). A trailing arrow may slide 3px. Focus also shows a 2px Signal Orange ring, offset 3px.
+- **Hover / Focus:** buttons never move. On hover and keyboard focus the primary button crossfades (350ms) from Signal Orange to the "sticks." gradient, `linear-gradient(90deg in oklch, Xanadu Teal, Signal Orange)`; its text fades from Char to Plain White at the same time (the owner's choice; white reaches about 3:1 on the gradient). A trailing arrow may slide 3px. The orange base fades out under the gradient, so no orange edge shows. Keyboard focus shows a 2px Harbour Ink ring, offset 3px (Plain White on the closing band).
 - **Ghost:** transparent with a Hairline Strong outline and Harbour Ink text. The outline fades to Harbour Ink on hover, with no movement. Use it for secondary actions.
 - **On the closing band:** the primary button keeps Signal Orange and its gradient hover; the ghost button turns Plain White text with a white 35% outline that fills to white on hover.
 

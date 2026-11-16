@@ -78,7 +78,9 @@ p { margin: 0; }
 .btn-primary { background: var(--signal-orange); color: var(--char); }
 .btn-primary::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg in oklch, var(--xanadu-teal), var(--signal-orange)); opacity: 0; transition: opacity .35s var(--ease); }
 .btn-primary:hover::before, .btn-primary:focus-visible::before { opacity: 1; }
-.btn-primary:hover, .btn-primary:focus-visible, .nav-links .btn-primary:hover, .nav-links .btn-primary:focus-visible { color: var(--plain-white); }
+.btn-primary:hover, .btn-primary:focus-visible, .nav-links .btn-primary:hover, .nav-links .btn-primary:focus-visible { color: var(--plain-white); background-color: transparent; }
+.btn-primary:focus-visible { outline-color: var(--harbour-ink); }
+.band .btn-primary:focus-visible { outline-color: var(--plain-white); }
 .btn-ghost { border-color: var(--hairline-strong); color: var(--harbour-ink); background: transparent; }
 .btn-ghost:hover { border-color: var(--harbour-ink); }
 .btn-sm { height: 42px; padding: 0 16px; font-size: .875rem; }
