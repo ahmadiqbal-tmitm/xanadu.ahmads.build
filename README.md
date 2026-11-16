@@ -10,7 +10,7 @@ Live at **https://xanadu.ahmads.build** (GitHub Pages).
 |---|---|---|
 | Logo | Teal ring, amber X, teal wordmark | **Same shapes, unchanged.** Recoloured: brighter teal ring, signal-orange X, white or ink wordmark. The X mark is used on its own as the favicon and a motif. |
 | Type | DM Serif Display + Nunito Sans | **Geist** for display and text, **Geist Mono** for labels, data and step numbers |
-| Colour | Muted petrol teal, slate grey, mint panels | **Ink** `#0A0F12` · **Xanadu Teal** `#00A3B4` · **Signal Orange** `#FF6B1A` · **Paper** `#F4F2ED` |
+| Colour | Muted petrol teal, slate grey, mint panels | Light ground `#F6F8F7` · **Xanadu Teal** `#00A3B4` · **Signal Orange** `#FF6B1A` · ink text `#0E1517`, with one solid teal closing band |
 | Hero | Stock rainbow-brain image | Animated example "deployment run" console |
 | Assessment | Banner link | Interactive 5-question readiness check with score and recommended starting step |
 | Method | Five equal cards | One connected track: Assess → Blueprint → Enable → Govern → Build |
