@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-16T10:51:34+00:00",
+  "generatedAt": "2026-11-16T10:59:31+00:00",
   "title": "Design System: Xanadu",
   "extensions": {
     "colorMeta": {
@@ -415,9 +415,9 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The one main action per screen: start the assessment or book a conversation.",
+      "description": "The one main action per screen. Hover crossfades to the teal-to-orange OKLCH gradient; it never moves.",
       "html": "<a class=\"ds-btn-primary\" href=\"#\">Start the assessment <span aria-hidden=\"true\">→</span></a>",
-      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;background:oklch(70.3% 0.198 43);color:oklch(16.4% 0.039 58);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none;transition:background .2s,transform .2s} .ds-btn-primary span{transition:transform .2s} .ds-btn-primary:hover{background:oklch(73.3% 0.176 46);transform:translateY(-1px)} .ds-btn-primary:hover span{transform:translateX(3px)} .ds-btn-primary:active{transform:none} .ds-btn-primary:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
+      "css": ".ds-btn-primary{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;background:oklch(70.3% 0.198 43);color:oklch(16.4% 0.039 58);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none} .ds-btn-primary::before{content:\"\";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg in oklch,oklch(65.4% 0.112 208),oklch(70.3% 0.198 43));opacity:0;transition:opacity .35s cubic-bezier(.16,1,.3,1)} .ds-btn-primary:hover::before,.ds-btn-primary:focus-visible::before{opacity:1} .ds-btn-primary span{transition:transform .2s} .ds-btn-primary:hover span{transform:translateX(3px)} .ds-btn-primary:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
     },
     {
       "name": "Ghost Button",
@@ -425,7 +425,7 @@
       "refersTo": "button-ghost",
       "description": "Secondary action beside a primary.",
       "html": "<a class=\"ds-btn-ghost\" href=\"#\">See how we work</a>",
-      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:999px;border:1px solid oklch(18.9% 0.011 217 / 0.16);color:oklch(18.9% 0.011 217);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none;transition:border-color .2s,transform .2s} .ds-btn-ghost:hover{border-color:oklch(18.9% 0.011 217);transform:translateY(-1px)} .ds-btn-ghost:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:999px;border:1px solid oklch(18.9% 0.011 217 / 0.16);color:oklch(18.9% 0.011 217);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none;transition:border-color .35s} .ds-btn-ghost:hover{border-color:oklch(18.9% 0.011 217)} .ds-btn-ghost:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
     },
     {
       "name": "Choice Pill",
@@ -476,19 +476,19 @@
       "css": ".ds-console{width:420px;max-width:100%;border-radius:20px;border:1px solid oklch(18.9% 0.011 217 / 0.16);background:oklch(100% 0 0);box-shadow:0 1px 0 oklch(18.9% 0.011 217 / 0.04),0 30px 60px -34px oklch(18.9% 0.011 217 / 0.28);font:400 13px/1.5 'Geist Mono',ui-monospace,monospace;color:oklch(18.9% 0.011 217)} .ds-console-head{display:flex;justify-content:space-between;padding:14px 16px;border-bottom:1px solid oklch(18.9% 0.011 217 / 0.09);color:oklch(49.6% 0.020 220);font-size:12px} .ds-live{color:oklch(53.6% 0.092 208);text-transform:uppercase;letter-spacing:.12em;font-size:11px} .ds-console ol{list-style:none;margin:0;padding:12px 16px} .ds-console li{display:grid;grid-template-columns:18px 1fr auto;gap:10px;padding:7px 0;border-bottom:1px dashed oklch(18.9% 0.011 217 / 0.09)} .ds-console i{font-style:normal;color:oklch(53.6% 0.092 208)} .ds-console em{font-style:normal;color:oklch(49.6% 0.020 220)} .ds-console b{font-weight:400;color:oklch(49.6% 0.020 220)} .ds-meter{margin:4px 16px 16px;height:4px;border-radius:4px;background:oklch(94.2% 0.006 183);overflow:hidden} .ds-meter span{display:block;width:60%;height:100%;background:linear-gradient(90deg in oklch,oklch(65.4% 0.112 208),oklch(70.3% 0.198 43))}"
     },
     {
-      "name": "Teal Band",
+      "name": "Closing Band",
       "kind": "custom",
-      "refersTo": "band-teal",
-      "description": "The one coloured ground: the closing call to action.",
-      "html": "<section class=\"ds-band\"><h2>Move from experiment to production.</h2><p>Tell us where you are with AI and Canva.</p><a href=\"#\">hello@xanadu.co →</a></section>",
-      "css": ".ds-band{padding:64px 24px;text-align:center;background:oklch(65.4% 0.112 208);color:oklch(18.9% 0.011 217);font-family:Geist,system-ui,sans-serif} .ds-band h2{margin:0;font-weight:650;font-size:48px;line-height:.95;letter-spacing:-.04em} .ds-band p{margin:16px 0 24px;color:oklch(27.9% 0.040 208);font-size:17px} .ds-band a{display:inline-flex;height:48px;align-items:center;padding:0 22px;border-radius:999px;background:oklch(100% 0 0);color:oklch(18.9% 0.011 217);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none;transition:transform .2s} .ds-band a:hover{transform:translateY(-1px)} .ds-band a:focus-visible{outline:2px solid oklch(18.9% 0.011 217);outline-offset:3px}"
+      "refersTo": "band-close",
+      "description": "The one dark ground: Night Lagoon close with the full-colour X mark.",
+      "html": "<section class=\"ds-band\"><h2>Move from experiment to production.</h2><p>Tell us where you are with AI.</p><a href=\"#\">Take the free assessment →</a></section>",
+      "css": ".ds-band{display:grid;justify-items:center;gap:16px;padding:64px 24px;text-align:center;background:oklch(27.9% 0.040 208);color:#fff;font-family:Geist,system-ui,sans-serif} .ds-band h2{margin:0;font-weight:650;font-size:44px;line-height:.95;letter-spacing:-.04em} .ds-band p{margin:0;color:oklch(90.5% 0.046 205);font-size:17px} .ds-band a{display:inline-flex;height:48px;align-items:center;padding:0 22px;border-radius:999px;background:oklch(70.3% 0.198 43);color:oklch(16.4% 0.039 58);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none} .ds-band a:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px}"
     }
   ],
   "narrative": {
     "northStar": "The Control Room in Daylight",
     "overview": "Xanadu sells AI that actually runs the business, to people who are accountable for it. The system looks like a well-run operations room seen at ten in the morning: bright, quiet and exact, with every instrument readable and nothing decorative competing for attention. Confidence comes from restraint and precision, not from effects. The visitor should feel they're looking at people who have shipped this before.\n\nThe page is light, near-white haze with plain white surfaces. Two brand colours do all the signalling: **Xanadu Teal** for structure and calm emphasis, **Signal Orange** for the one action that matters. Type is one family, Geist, set large and tight for statements and plain for reading, with Geist Mono kept for small labels and machine output. Density is generous: one idea per section, short copy, wide margins.\n\nConfirmed rejections: dark or black page grounds, glow and spotlight effects, stock \"AI\" imagery, the old xanadu.co petrol teal, amber and serif look, and text-heavy heroes.",
     "keyCharacteristics": [
-      "Light-first: Morning Haze ground, Plain White surfaces, Harbour Ink text.",
+      "Light-first: Morning Haze ground, Plain White surfaces, Harbour Ink text; one deep Night Lagoon band closes each page.",
       "Two accents only, each with one job: teal structures, orange acts.",
       "One typeface family, with weight and size doing the hierarchy.",
       "Hairline borders and soft, offset shadows; nothing glows.",
@@ -507,7 +507,7 @@
       },
       {
         "name": "The Daylight Rule",
-        "body": "No page or section ground darker than Pale Stone, with one exception: the single Xanadu Teal band. Harbour Ink appears as text, small fills (choice pills, step dots) and nothing larger.",
+        "body": "No page or section ground darker than Pale Stone, with one exception: the single Night Lagoon closing band. Harbour Ink appears as text, small fills (choice pills, step dots) and nothing larger.",
         "section": "colors"
       },
       {
@@ -527,7 +527,7 @@
       },
       {
         "name": "The No-Kicker Rule",
-        "body": "Headings stand alone. A mono label may introduce the hero's credential line, or label data, but never sits above a section heading as an eyebrow, and never carries a number like \"01 —\".",
+        "body": "Headings stand alone. A mono label may carry an inner page's credential line, or label data, but never sits above a section heading as an eyebrow, and never carries a number like \"01 —\".",
         "section": "typography"
       },
       {
@@ -572,7 +572,7 @@
       }
     ],
     "dos": [
-      "**Do** keep every page ground Morning Haze or Plain White; the only coloured ground is one Xanadu Teal band.",
+      "**Do** keep every page ground Morning Haze or Plain White; the only exception is one Night Lagoon closing band.",
       "**Do** give each screen one Signal Orange primary action, with Char text.",
       "**Do** use Deep Lagoon (#007C89) for teal text at body size, and Kiln (#C24A00) for small orange text.",
       "**Do** keep sections to a headline, at most two sentences and one action.",
@@ -582,7 +582,8 @@
       "**Do** write every gradient as `linear-gradient(<angle> in oklch, …)`."
     ],
     "donts": [
-      "**Don't** use dark or black page backgrounds, glows, radial spotlights or neon edges.",
+      "**Don't** use dark or black page backgrounds (beyond the one Night Lagoon close), glows, radial spotlights or neon edges.",
+      "**Don't** move buttons on hover; colour does the work.",
       "**Don't** use the original xanadu.co petrol teal or amber, or the muted teals of the rejected v2 directions.",
       "**Don't** set body text in Xanadu Teal or Signal Orange; they fail contrast on white.",
       "**Don't** stack section labels above headings, or number them \"01 —\".",

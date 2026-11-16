@@ -72,13 +72,12 @@ p { margin: 0; }
 .accent { background: linear-gradient(90deg in oklch, var(--xanadu-teal), var(--signal-orange)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 /* ---------- buttons ---------- */
-.btn { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: var(--r-pill); border: 1px solid transparent; font: 500 .9375rem/1 var(--sans); text-decoration: none; cursor: pointer; transition: background .2s, border-color .2s, transform .2s; }
-.btn:hover { transform: translateY(-1px); }
-.btn:active { transform: none; }
+.btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: var(--r-pill); border: 1px solid transparent; font: 500 .9375rem/1 var(--sans); text-decoration: none; cursor: pointer; transition: background-color .35s var(--ease), border-color .35s var(--ease), color .35s var(--ease); }
 .btn .arr { transition: transform .2s var(--ease); }
 .btn:hover .arr { transform: translateX(3px); }
 .btn-primary { background: var(--signal-orange); color: var(--char); }
-.btn-primary:hover { background: var(--signal-orange-hover); }
+.btn-primary::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg in oklch, var(--xanadu-teal), var(--signal-orange)); opacity: 0; transition: opacity .35s var(--ease); }
+.btn-primary:hover::before, .btn-primary:focus-visible::before { opacity: 1; }
 .btn-ghost { border-color: var(--hairline-strong); color: var(--harbour-ink); background: transparent; }
 .btn-ghost:hover { border-color: var(--harbour-ink); }
 .btn-sm { height: 42px; padding: 0 16px; font-size: .875rem; }
@@ -111,8 +110,9 @@ p { margin: 0; }
 .credential .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--signal-orange); flex: none; }
 .hero .t-lede { margin-top: var(--s5); }
 .ctas { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s6); }
-.hero-meta { display: flex; flex-wrap: wrap; gap: var(--s3) var(--s6); list-style: none; margin: var(--s7) 0 0; padding: 0; font-size: .875rem; }
-.hero-meta .t-label { display: block; margin-bottom: 4px; color: var(--slate); font-size: .6875rem; }
+.partners { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s4) var(--s6); list-style: none; margin: var(--s7) 0 0; padding: 0; }
+.partners img { height: 56px; width: auto; }
+.partners img.round { height: 76px; }
 
 /* example console */
 .console { background: var(--plain-white); border: 1px solid var(--hairline-strong); border-radius: var(--r-lg); box-shadow: var(--float); overflow: hidden; min-width: 0; }
@@ -242,17 +242,14 @@ a.card:hover .more .arr { transform: translateX(3px); }
 .statements p { color: var(--slate); max-width: 36em; }
 
 /* ---------- teal band (close) ---------- */
-.band { position: relative; overflow: hidden; padding: clamp(72px, 9vw, 120px) 0; text-align: center; background: var(--xanadu-teal); color: var(--harbour-ink); --hairline: oklch(18.9% 0.011 217 / 0.10); }
+.band { position: relative; overflow: hidden; padding: clamp(72px, 9vw, 120px) 0; text-align: center; background: var(--night-lagoon); color: var(--plain-white); --hairline: oklch(100% 0 0 / 0.07); }
 .band .field-grid { mask-image: radial-gradient(ellipse 55% 65% at 50% 50%, #000 10%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 55% 65% at 50% 50%, #000 10%, transparent 70%); }
 .band-inner { position: relative; }
-.band .mark { width: 64px; height: 62px; margin: 0 auto var(--s6); --logo-ring: var(--plain-white); }
-.band p { margin: var(--s5) auto 0; max-width: 32em; color: var(--night-lagoon); font-size: 1.125rem; }
+.band .mark { width: 84px; height: 81px; margin: 0 auto var(--s6); }
+.band p { margin: var(--s5) auto 0; max-width: 32em; color: var(--sea-glass); font-size: 1.125rem; }
 .band .ctas { justify-content: center; }
-.band .btn-primary { background: var(--plain-white); color: var(--harbour-ink); }
-.band .btn-primary:hover { background: var(--shallow-water); }
-.band .btn-ghost { border-color: oklch(18.9% 0.011 217 / 0.35); }
-.band .btn-ghost:hover { border-color: var(--harbour-ink); }
-.band :focus-visible { outline-color: var(--harbour-ink); }
+.band .btn-ghost { border-color: oklch(100% 0 0 / 0.35); color: var(--plain-white); }
+.band .btn-ghost:hover { border-color: var(--plain-white); }
 
 /* ---------- footer ---------- */
 .footer { padding: var(--s8) 0 var(--s6); background: var(--morning-haze); color: var(--slate); border-top: 1px solid var(--hairline); }

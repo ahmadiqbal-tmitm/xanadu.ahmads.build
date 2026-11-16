@@ -116,9 +116,6 @@ components:
     rounded: "{rounded.pill}"
     padding: "14px 22px"
     height: "48px"
-  button-primary-hover:
-    backgroundColor: "{colors.signal-orange-hover}"
-    textColor: "{colors.char}"
   button-ghost:
     backgroundColor: "transparent"
     textColor: "{colors.harbour-ink}"
@@ -126,9 +123,9 @@ components:
     rounded: "{rounded.pill}"
     padding: "14px 22px"
     height: "48px"
-  button-on-teal:
-    backgroundColor: "{colors.plain-white}"
-    textColor: "{colors.harbour-ink}"
+  button-ghost-on-dark:
+    backgroundColor: "transparent"
+    textColor: "{colors.plain-white}"
     typography: "{typography.button}"
     rounded: "{rounded.pill}"
     padding: "14px 22px"
@@ -168,19 +165,15 @@ components:
     textColor: "{colors.slate}"
     typography: "{typography.label}"
     height: "44px"
-  band-teal:
-    backgroundColor: "{colors.xanadu-teal}"
-    textColor: "{colors.harbour-ink}"
+  partner-badges:
+    height: "56px"
+  band-close:
+    backgroundColor: "{colors.night-lagoon}"
+    textColor: "{colors.plain-white}"
     padding: "clamp(72px, 9vw, 120px) 0"
 ---
 
-<!-- Source of truth: this file. Built from the light v1 homepage (index.html, styles.css) on 2026-11-16.
-     Where today's styles.css differs, this file wins and the CSS follows at the next build:
-     1. CSS tokens move from hex to these OKLCH values (same colours; hex fallbacks are listed in Colors).
-     2. Letter-spacing floor is -0.04em (the v1 hero headline uses -0.05em).
-     3. Radii collapse to four steps (the console's 18px becomes 20px; 12px insets become 14px).
-     4. Big figures use Geist with tabular numerals, not Geist Mono.
-     5. Section labels lose their "01 —" numbering, and at most one appears per screen. -->
+<!-- Source of truth: this file. Implemented by styles.css and the v2 pages (index.html, ai-transformation/, about/). Change this file first, then the CSS. -->
 
 # Design System: Xanadu
 
@@ -195,7 +188,7 @@ The page is light, near-white haze with plain white surfaces. Two brand colours 
 Confirmed rejections: dark or black page grounds, glow and spotlight effects, stock "AI" imagery, the old xanadu.co petrol teal, amber and serif look, and text-heavy heroes.
 
 **Key Characteristics:**
-- Light-first: Morning Haze ground, Plain White surfaces, Harbour Ink text.
+- Light-first: Morning Haze ground, Plain White surfaces, Harbour Ink text; one deep Night Lagoon band closes each page.
 - Two accents only, each with one job: teal structures, orange acts.
 - One typeface family, with weight and size doing the hierarchy.
 - Hairline borders and soft, offset shadows; nothing glows.
@@ -206,8 +199,8 @@ Confirmed rejections: dark or black page grounds, glow and spotlight effects, st
 A near-neutral daylight palette, faintly cooled toward the teal, with two saturated brand accents used sparingly.
 
 ### Primary
-- **Xanadu Teal** (oklch(65.4% 0.112 208), hex #00A3B4): the brand's structural colour. Use it for the logo ring, progress fills, chart bars, selected-state fills, the one teal band per page, and display-size type. It reaches only 3.0:1 on white, so never use it for text under 24px (or under 19px bold).
-- **Deep Lagoon** (oklch(53.6% 0.092 208), hex #007C89): teal for text and small marks on light grounds. Use it for links, small labels, ticks, icons in facts lists, and the credential line (4.6:1 on Morning Haze, 5.0:1 on white).
+- **Xanadu Teal** (oklch(65.4% 0.112 208), hex #00A3B4): the brand's structural colour. Use it for the logo ring, progress fills, chart bars, selected-state fills, the logo ring (including on the dark closing band), and display-size type. It reaches only 3.0:1 on white, so never use it for text under 24px (or under 19px bold).
+- **Deep Lagoon** (oklch(53.6% 0.092 208), hex #007C89): teal for text and small marks on light grounds. Use it for links, small labels, ticks, icons in facts lists and inner-page credential lines (4.6:1 on Morning Haze, 5.0:1 on white).
 
 ### Secondary
 - **Signal Orange** (oklch(70.3% 0.198 43), hex #FF6B1A): the action colour. Use it for primary buttons, the logo's X, the active or current marker, and one highlighted figure. Text on orange is always Char, never white.
@@ -223,7 +216,7 @@ A near-neutral daylight palette, faintly cooled toward the teal, with two satura
 - **Harbour Ink** (oklch(18.9% 0.011 217), hex #0E1517): all primary text, selected choice pills, numbered step dots. It is a text colour, never a page ground.
 - **Slate** (oklch(49.6% 0.020 220), hex #56656A): secondary text, ledes, captions and nav links (5.7:1 on Morning Haze).
 - **Hairline** (Harbour Ink at 9%) and **Hairline Strong** (Harbour Ink at 16%): every divider, card border and ghost-button outline.
-- **Night Lagoon** (oklch(27.9% 0.040 208), hex #0B2E33): body text on the teal band (4.8:1).
+- **Night Lagoon** (oklch(27.9% 0.040 208), hex #0B2E33): the closing band ground, the one dark surface in the system. Plain White text on it reaches 13:1; Sea Glass copy reads comfortably.
 - **Shallow Water** (oklch(95.7% 0.019 205), hex #E3F5F7): hover fill for rows and choices.
 - **Sea Glass** (oklch(90.5% 0.046 205), hex #BDE9EE): text selection.
 - **Char** (oklch(16.4% 0.039 58), hex #1A0900): text on Signal Orange (6.8:1).
@@ -233,7 +226,7 @@ A near-neutral daylight palette, faintly cooled toward the teal, with two satura
 
 **The One Shout Rule.** Signal Orange covers no more than about 5% of any screen: one primary button, one marker, at most one highlighted figure.
 
-**The Daylight Rule.** No page or section ground darker than Pale Stone, with one exception: the single Xanadu Teal band. Harbour Ink appears as text, small fills (choice pills, step dots) and nothing larger.
+**The Daylight Rule.** No page or section ground darker than Pale Stone, with one exception: the single Night Lagoon closing band. Harbour Ink appears as text, small fills (choice pills, step dots) and nothing larger.
 
 **The Two Teals Rule.** Xanadu Teal for fills and display type; Deep Lagoon for anything a person has to read at body size.
 
@@ -248,7 +241,7 @@ A near-neutral daylight palette, faintly cooled toward the teal, with two satura
 **Character:** A single engineered sans carries everything, from tight, heavy statements to plain reading text. Mono appears only where a machine would speak: labels, the example console, measurements.
 
 ### Hierarchy
-- **Display** (650, 46px to 88px fluid, line-height 0.92, -0.04em): the hero headline, and the closing statement on the teal band. One per screen.
+- **Display** (650, 46px to 88px fluid, line-height 0.92, -0.04em): the hero headline, and the closing statement on the closing band. One per screen.
 - **Headline** (600, 30px to 48px, 1.05, -0.03em): section headings. A second sentence may follow in Slate as a quieter continuation, as long as it stands as its own sentence.
 - **Statement** (600, 28px to 42px, 1.05, -0.03em): point-of-view lines and manifesto items.
 - **Title** (600, 24px to 32px, 1.05, -0.03em): card and panel titles.
@@ -258,12 +251,12 @@ A near-neutral daylight palette, faintly cooled toward the teal, with two satura
 - **Body** (400, 17px, 1.55): running text, max 65ch.
 - **Body Small** (400, 15px, 1.5): card copy, nav links and choices.
 - **Caption** (400, 13px, 1.5): footnotes, sources and helper text. Never below 13px.
-- **Label** (Geist Mono, 500, 12px, uppercase, 0.12em): the hero credential line, data labels and console text. Never below 11px.
+- **Label** (Geist Mono, 500, 12px, uppercase, 0.12em): inner-page credential lines, data labels and console text. Never below 11px.
 
 ### Named Rules
 **The Short Copy Rule.** A section is a headline, at most two sentences and one action. If a hero needs a third sentence, the headline isn't finished.
 
-**The No-Kicker Rule.** Headings stand alone. A mono label may introduce the hero's credential line, or label data, but never sits above a section heading as an eyebrow, and never carries a number like "01 —".
+**The No-Kicker Rule.** Headings stand alone. A mono label may carry an inner page's credential line, or label data, but never sits above a section heading as an eyebrow, and never carries a number like "01 —".
 
 **The Tight Display Rule.** Display and headline tracking stays between -0.04em and -0.03em, and line-height never drops below 0.92. Tighter than that and Geist's counters close.
 
@@ -280,7 +273,7 @@ Arabic is **off** until a native speaker has checked the copy (PRODUCT.md). When
 
 ## Layout
 
-A centred column of 1200px with a fluid side gutter (16px to 40px). Sections stack vertically with firm, even padding (56px to 96px top and bottom; heading to content 28px to 44px), alternating Morning Haze and Plain White grounds to separate them without heavy rules. One teal band, the close, ends the page.
+A centred column of 1200px with a fluid side gutter (16px to 40px). Sections stack vertically with firm, even padding (56px to 96px top and bottom; heading to content 28px to 44px), alternating Morning Haze and Plain White grounds to separate them without heavy rules. One Night Lagoon band, the close, ends the page.
 
 The spacing rhythm is a 4px base: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128. Use 8 to 16 inside components, 24 to 48 between related blocks, and the section value between sections. Always leave more space above a heading than below it.
 
@@ -314,8 +307,8 @@ Borders are 1px Hairline, or Hairline Strong for interactive outlines. A coloure
 ### Pattern accents
 The system has exactly two pattern devices. Both are optional, and both are quiet.
 
-- **The X mark.** The logo's ring-and-X keeps its original shapes. Allowed colours: ring in Xanadu Teal with the X in Signal Orange, or ring in Plain White with the X in Signal Orange on the teal band. Beyond the logo, the mark may appear once per screen as a graphic: whole at small size (48px to 72px, as on the closing band), or large and cropped by a container edge (no more than half of it cut away). It is never tiled, rotated, outlined, distorted or animated in a loop.
-- **The field grid.** A 64px square grid of Hairline lines, faded out with a radial mask so it covers no more than about 60% of its area. Allowed behind the hero and the teal band only, never behind body text, and at most 9% line opacity.
+- **The X mark.** The logo's ring-and-X keeps its original shapes. Allowed colours: ring in Xanadu Teal with the X in Signal Orange, on light grounds and on the dark closing band alike. Beyond the logo, the mark may appear once per screen as a graphic: whole at small size (48px to 84px, as on the closing band), or large and cropped by a container edge (no more than half of it cut away). It is never tiled, rotated, outlined, distorted or animated in a loop.
+- **The field grid.** A 64px square grid of Hairline lines, faded out with a radial mask so it covers no more than about 60% of its area. Allowed behind the hero and the closing band only, never behind body text, and at most 9% line opacity (white at 7% on the closing band).
 
 **The One Mark Rule.** One X graphic per screen, besides the logo. Its power is its rarity.
 
@@ -327,9 +320,9 @@ The system has exactly two pattern devices. Both are optional, and both are quie
 Confident and simple: pills that answer the pointer.
 - **Shape:** pill (999px), 48px tall (42px in the nav), padding 14px 22px, label in Button type.
 - **Primary:** Signal Orange with Char text. One per screen, for the main action: start the assessment, or book a conversation.
-- **Hover / Focus:** hover lifts 1px and shifts to Signal Orange Hover. A trailing arrow moves 3px to the right. Focus shows a 2px Signal Orange ring, offset 3px. Press returns it to its resting position.
-- **Ghost:** transparent with a Hairline Strong outline and Harbour Ink text. The outline darkens to Harbour Ink on hover. Use it for secondary actions.
-- **On teal:** Plain White with Harbour Ink text, plus a ghost variant with a Harbour Ink 35% outline. Only on the teal band.
+- **Hover / Focus:** buttons never move. On hover and keyboard focus the primary button crossfades (350ms) from Signal Orange to the "sticks." gradient, `linear-gradient(90deg in oklch, Xanadu Teal, Signal Orange)`; Char text stays readable across it (6:1 or better). A trailing arrow may slide 3px. Focus also shows a 2px Signal Orange ring, offset 3px.
+- **Ghost:** transparent with a Hairline Strong outline and Harbour Ink text. The outline fades to Harbour Ink on hover, with no movement. Use it for secondary actions.
+- **On the closing band:** the primary button keeps Signal Orange and its gradient hover; the ghost button turns Plain White text with a white 35% outline that fills to white on hover.
 
 ### Chips
 - **Style:** transparent, Hairline outline, Harbour Ink text, pill, 7px 12px. Use them for secondary lists such as sectors.
@@ -369,13 +362,16 @@ A white Float panel that plays an illustrative deployment, step by step, in Labe
 ### Readiness result
 A Plain White panel with a Pale Stone dial ring filling in Signal Orange, a Figure score, a Deep Lagoon tier line, and one primary button. It stays sticky beside the questions on desktop, and sits inline on mobile.
 
-### Teal band (close)
-Full-width Xanadu Teal, 72px to 120px tall padding, centred Display headline in Harbour Ink, one line of Night Lagoon copy, the X mark above in white and orange, and on-teal buttons. One per page, always last before the footer.
+### Closing band
+Full-width Night Lagoon, 72px to 120px padding, the full-colour X mark (teal ring, orange X) at 84px above a centred Plain White Display headline, one line of Sea Glass copy, a primary button and a light ghost button. One per page, always last before the footer.
+
+### Partner badges
+The official partner badges, as issued by each programme, sit in a row under the hero buttons: the Claude Partner Network "Certified Services Partner" badge at 56px tall, and the round Canva "Certified Reseller Partner" badge at 76px. Never redrawn, recoloured or cropped. They replace any text credential line on Home.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep every page ground Morning Haze or Plain White; the only coloured ground is one Xanadu Teal band.
+- **Do** keep every page ground Morning Haze or Plain White; the only exception is one Night Lagoon closing band.
 - **Do** give each screen one Signal Orange primary action, with Char text.
 - **Do** use Deep Lagoon (#007C89) for teal text at body size, and Kiln (#C24A00) for small orange text.
 - **Do** keep sections to a headline, at most two sentences and one action.
@@ -385,7 +381,8 @@ Full-width Xanadu Teal, 72px to 120px tall padding, centred Display headline in 
 - **Do** write every gradient as `linear-gradient(<angle> in oklch, …)`.
 
 ### Don't:
-- **Don't** use dark or black page backgrounds, glows, radial spotlights or neon edges.
+- **Don't** use dark or black page backgrounds (beyond the one Night Lagoon close), glows, radial spotlights or neon edges.
+- **Don't** move buttons on hover; colour does the work.
 - **Don't** use the original xanadu.co petrol teal or amber, or the muted teals of the rejected v2 directions.
 - **Don't** set body text in Xanadu Teal or Signal Orange; they fail contrast on white.
 - **Don't** stack section labels above headings, or number them "01 —".
