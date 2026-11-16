@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-16T10:11:57+00:00",
+  "generatedAt": "2026-11-16T10:48:55+00:00",
   "title": "Design System: Xanadu",
   "extensions": {
     "colorMeta": {
@@ -357,6 +357,11 @@
         "name": "reduced-motion",
         "value": "all loops stop; entrances removed",
         "purpose": "prefers-reduced-motion: reduce."
+      },
+      {
+        "name": "marquee",
+        "value": "36s per logo set, linear, infinite",
+        "purpose": "Client logo strip only; pauses on hover, focus and the pause button; off under reduced motion."
       }
     ],
     "breakpoints": [
@@ -398,6 +403,11 @@
       "size": "1.1x the paired Latin size, line-height ≥1.5, letter-spacing 0",
       "colour": "Slate or Deep Lagoon",
       "markup": "lang=\"ar\" dir=\"rtl\"; layout never mirrors"
+    },
+    "gradients": {
+      "interpolation": "oklch",
+      "example": "linear-gradient(90deg in oklch, oklch(65.4% 0.112 208), oklch(70.3% 0.198 43))",
+      "purpose": "Keeps the teal-to-orange midpoint saturated instead of grey."
     }
   },
   "components": [
@@ -434,6 +444,14 @@
       "css": ".ds-chip{display:inline-flex;padding:7px 12px;border-radius:999px;border:1px solid oklch(18.9% 0.011 217 / 0.09);color:oklch(18.9% 0.011 217);font:400 15px/1.2 Geist,system-ui,sans-serif}"
     },
     {
+      "name": "Client Logo Strip",
+      "kind": "custom",
+      "refersTo": "client-strip",
+      "description": "Real client logos in a slow greyscale loop with a pause button; static under reduced motion.",
+      "html": "<div class=\"ds-strip\"><span>Clients include</span><div class=\"ds-mq\"><div class=\"ds-mq-track\"><b>MBZUAI</b><b>AURAK</b><b>Ajman</b><b>Sharjah</b><b aria-hidden=\"true\">MBZUAI</b><b aria-hidden=\"true\">AURAK</b><b aria-hidden=\"true\">Ajman</b><b aria-hidden=\"true\">Sharjah</b></div></div><button aria-label=\"Pause client logos\"><svg viewBox=\"0 0 14 14\" width=\"12\" height=\"12\" aria-hidden=\"true\"><rect x=\"3\" y=\"2\" width=\"2.5\" height=\"10\" rx=\"1\" fill=\"currentColor\"/><rect x=\"8.5\" y=\"2\" width=\"2.5\" height=\"10\" rx=\"1\" fill=\"currentColor\"/></svg></button></div>",
+      "css": ".ds-strip{display:flex;align-items:center;gap:24px;padding:18px 20px;background:oklch(100% 0 0);border-block:1px solid oklch(18.9% 0.011 217 / 0.09);font:500 12px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:oklch(49.6% 0.020 220)} .ds-mq{flex:1;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)} .ds-mq-track{display:flex;gap:48px;width:max-content;animation:ds-mq 16s linear infinite} .ds-mq-track b{font:600 20px/1 Geist,system-ui,sans-serif;letter-spacing:-.01em;text-transform:none;color:oklch(18.9% 0.011 217 / 0.55)} .ds-mq:hover .ds-mq-track{animation-play-state:paused} @keyframes ds-mq{to{transform:translateX(-50%)}} .ds-strip button{width:32px;height:32px;border-radius:50%;border:1px solid oklch(18.9% 0.011 217 / 0.16);background:#fff;display:grid;place-items:center;color:oklch(18.9% 0.011 217);cursor:pointer} .ds-strip button:focus-visible{outline:2px solid oklch(70.3% 0.198 43);outline-offset:3px} @media (prefers-reduced-motion:reduce){.ds-mq-track{animation:none}}"
+    },
+    {
       "name": "Card",
       "kind": "card",
       "refersTo": "card",
@@ -455,7 +473,7 @@
       "refersTo": "console",
       "description": "Signature panel playing an illustrative deployment; always labelled example.",
       "html": "<div class=\"ds-console\"><div class=\"ds-console-head\"><span>example deployment</span><span class=\"ds-live\">example</span></div><ol><li><i>›</i><span><em>assess</em> workflows mapped</span><b>42</b></li><li><i>›</i><span><em>enable</em> brand kit locked</span><b>✓</b></li></ol><div class=\"ds-meter\"><span></span></div></div>",
-      "css": ".ds-console{width:420px;max-width:100%;border-radius:20px;border:1px solid oklch(18.9% 0.011 217 / 0.16);background:oklch(100% 0 0);box-shadow:0 1px 0 oklch(18.9% 0.011 217 / 0.04),0 30px 60px -34px oklch(18.9% 0.011 217 / 0.28);font:400 13px/1.5 'Geist Mono',ui-monospace,monospace;color:oklch(18.9% 0.011 217)} .ds-console-head{display:flex;justify-content:space-between;padding:14px 16px;border-bottom:1px solid oklch(18.9% 0.011 217 / 0.09);color:oklch(49.6% 0.020 220);font-size:12px} .ds-live{color:oklch(53.6% 0.092 208);text-transform:uppercase;letter-spacing:.12em;font-size:11px} .ds-console ol{list-style:none;margin:0;padding:12px 16px} .ds-console li{display:grid;grid-template-columns:18px 1fr auto;gap:10px;padding:7px 0;border-bottom:1px dashed oklch(18.9% 0.011 217 / 0.09)} .ds-console i{font-style:normal;color:oklch(53.6% 0.092 208)} .ds-console em{font-style:normal;color:oklch(49.6% 0.020 220)} .ds-console b{font-weight:400;color:oklch(49.6% 0.020 220)} .ds-meter{margin:4px 16px 16px;height:4px;border-radius:4px;background:oklch(94.2% 0.006 183);overflow:hidden} .ds-meter span{display:block;width:60%;height:100%;background:linear-gradient(90deg,oklch(65.4% 0.112 208),oklch(70.3% 0.198 43))}"
+      "css": ".ds-console{width:420px;max-width:100%;border-radius:20px;border:1px solid oklch(18.9% 0.011 217 / 0.16);background:oklch(100% 0 0);box-shadow:0 1px 0 oklch(18.9% 0.011 217 / 0.04),0 30px 60px -34px oklch(18.9% 0.011 217 / 0.28);font:400 13px/1.5 'Geist Mono',ui-monospace,monospace;color:oklch(18.9% 0.011 217)} .ds-console-head{display:flex;justify-content:space-between;padding:14px 16px;border-bottom:1px solid oklch(18.9% 0.011 217 / 0.09);color:oklch(49.6% 0.020 220);font-size:12px} .ds-live{color:oklch(53.6% 0.092 208);text-transform:uppercase;letter-spacing:.12em;font-size:11px} .ds-console ol{list-style:none;margin:0;padding:12px 16px} .ds-console li{display:grid;grid-template-columns:18px 1fr auto;gap:10px;padding:7px 0;border-bottom:1px dashed oklch(18.9% 0.011 217 / 0.09)} .ds-console i{font-style:normal;color:oklch(53.6% 0.092 208)} .ds-console em{font-style:normal;color:oklch(49.6% 0.020 220)} .ds-console b{font-weight:400;color:oklch(49.6% 0.020 220)} .ds-meter{margin:4px 16px 16px;height:4px;border-radius:4px;background:oklch(94.2% 0.006 183);overflow:hidden} .ds-meter span{display:block;width:60%;height:100%;background:linear-gradient(90deg in oklch,oklch(65.4% 0.112 208),oklch(70.3% 0.198 43))}"
     },
     {
       "name": "Teal Band",
@@ -463,7 +481,7 @@
       "refersTo": "band-teal",
       "description": "The one coloured ground: the closing call to action.",
       "html": "<section class=\"ds-band\"><h2>Move from experiment to production.</h2><p>Tell us where you are with AI and Canva.</p><a href=\"#\">hello@xanadu.co →</a></section>",
-      "css": ".ds-band{padding:72px 24px;text-align:center;background:oklch(65.4% 0.112 208);color:oklch(18.9% 0.011 217);font-family:Geist,system-ui,sans-serif} .ds-band h2{margin:0;font-weight:650;font-size:48px;line-height:.95;letter-spacing:-.04em} .ds-band p{margin:16px 0 24px;color:oklch(27.9% 0.040 208);font-size:17px} .ds-band a{display:inline-flex;height:48px;align-items:center;padding:0 22px;border-radius:999px;background:oklch(100% 0 0);color:oklch(18.9% 0.011 217);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none;transition:transform .2s} .ds-band a:hover{transform:translateY(-1px)} .ds-band a:focus-visible{outline:2px solid oklch(18.9% 0.011 217);outline-offset:3px}"
+      "css": ".ds-band{padding:64px 24px;text-align:center;background:oklch(65.4% 0.112 208);color:oklch(18.9% 0.011 217);font-family:Geist,system-ui,sans-serif} .ds-band h2{margin:0;font-weight:650;font-size:48px;line-height:.95;letter-spacing:-.04em} .ds-band p{margin:16px 0 24px;color:oklch(27.9% 0.040 208);font-size:17px} .ds-band a{display:inline-flex;height:48px;align-items:center;padding:0 22px;border-radius:999px;background:oklch(100% 0 0);color:oklch(18.9% 0.011 217);font:500 15px/1 Geist,system-ui,sans-serif;text-decoration:none;transition:transform .2s} .ds-band a:hover{transform:translateY(-1px)} .ds-band a:focus-visible{outline:2px solid oklch(18.9% 0.011 217);outline-offset:3px}"
     }
   ],
   "narrative": {
@@ -498,6 +516,11 @@
         "section": "colors"
       },
       {
+        "name": "The No-Grey-Middle Rule",
+        "body": "Every gradient interpolates in OKLCH: `linear-gradient(90deg in oklch, <teal>, <orange>)`. Plain sRGB blending turns teal to orange through grey; OKLCH keeps the midpoint saturated (it passes through green and gold).",
+        "section": "colors"
+      },
+      {
         "name": "The Short Copy Rule",
         "body": "A section is a headline, at most two sentences and one action. If a hero needs a third sentence, the headline isn't finished.",
         "section": "typography"
@@ -514,12 +537,17 @@
       },
       {
         "name": "The One Gradient Rule",
-        "body": "The hero headline may carry a single accent word in a left-to-right Deep Lagoon to Signal Orange gradient (\"sticks.\"). It appears once on the site and nowhere else: no other gradient text, ever.",
+        "body": "The hero headline may carry a single accent word in a left-to-right Xanadu Teal to Signal Orange gradient, interpolated in OKLCH (\"sticks.\"). It appears once on the site and nowhere else: no other gradient text, ever.",
         "section": "typography"
       },
       {
         "name": "The One Idea Rule",
         "body": "Each section carries one idea at one scale. A dense section, such as the assessment, is followed by a quiet one.",
+        "section": "layout"
+      },
+      {
+        "name": "The Close Rhythm Rule",
+        "body": "Sections sit close enough that the next heading is in reach. If a gap between sections looks like the page has ended, it is too big.",
         "section": "layout"
       },
       {
@@ -536,6 +564,11 @@
         "name": "The Quiet Pattern Rule",
         "body": "If a pattern is the first thing you notice, it's too strong. Patterns sit behind content, never between the reader and the words.",
         "section": "shapes"
+      },
+      {
+        "name": "The Pause Rule",
+        "body": "Anything that moves for more than five seconds has a visible pause control, stops on hover and focus, and rests completely under reduced motion.",
+        "section": "components"
       }
     ],
     "dos": [
@@ -545,7 +578,8 @@
       "**Do** keep sections to a headline, at most two sentences and one action.",
       "**Do** attribute every statistic in a Caption source line, and label every demonstration as an example.",
       "**Do** let motion start from content that is already visible: transform-based entrances, and no fade from zero opacity.",
-      "**Do** respect `prefers-reduced-motion`: loops stop and content stays put."
+      "**Do** respect `prefers-reduced-motion`: loops stop and content stays put.",
+      "**Do** write every gradient as `linear-gradient(<angle> in oklch, …)`."
     ],
     "donts": [
       "**Don't** use dark or black page backgrounds, glows, radial spotlights or neon edges.",
@@ -555,7 +589,8 @@
       "**Don't** use gradient text anywhere except the single hero accent word.",
       "**Don't** tile, rotate or animate the X mark, or show it more than once per screen beyond the logo.",
       "**Don't** ship Arabic before a native speaker has approved it; when it ships, never more than one line per screen.",
-      "**Don't** use stock AI imagery (brains, circuits, robots, glowing orbs)."
+      "**Don't** use stock AI imagery (brains, circuits, robots, glowing orbs).",
+      "**Don't** run any motion for more than five seconds without a visible pause control."
     ]
   }
 }

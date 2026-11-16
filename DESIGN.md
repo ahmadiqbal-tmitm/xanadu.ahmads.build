@@ -29,16 +29,16 @@ typography:
     letterSpacing: "-0.04em"
   headline:
     fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.25rem, 5.2vw, 4.25rem)"
+    fontSize: "clamp(1.875rem, 3.6vw, 3rem)"
     fontWeight: 600
-    lineHeight: 1.02
-    letterSpacing: "-0.035em"
+    lineHeight: 1.05
+    letterSpacing: "-0.03em"
   statement:
     fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2rem, 4.6vw, 3.75rem)"
+    fontSize: "clamp(1.75rem, 3.2vw, 2.625rem)"
     fontWeight: 600
-    lineHeight: 1.02
-    letterSpacing: "-0.04em"
+    lineHeight: 1.05
+    letterSpacing: "-0.03em"
   title:
     fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(1.5rem, 2.4vw, 2rem)"
@@ -106,7 +106,7 @@ spacing:
   "9": "96px"
   "10": "128px"
   gutter: "clamp(16px, 4vw, 40px)"
-  section: "clamp(80px, 11vw, 140px)"
+  section: "clamp(56px, 7vw, 96px)"
   wrap: "1200px"
 components:
   button-primary:
@@ -163,10 +163,15 @@ components:
     textColor: "{colors.slate}"
     typography: "{typography.body-sm}"
     height: "68px"
+  client-strip:
+    backgroundColor: "{colors.plain-white}"
+    textColor: "{colors.slate}"
+    typography: "{typography.label}"
+    height: "44px"
   band-teal:
     backgroundColor: "{colors.xanadu-teal}"
     textColor: "{colors.harbour-ink}"
-    padding: "clamp(96px, 13vw, 168px) 0"
+    padding: "clamp(72px, 9vw, 120px) 0"
 ---
 
 <!-- Source of truth: this file. Built from the light v1 homepage (index.html, styles.css) on 2026-11-16.
@@ -232,6 +237,8 @@ A near-neutral daylight palette, faintly cooled toward the teal, with two satura
 
 **The Two Teals Rule.** Xanadu Teal for fills and display type; Deep Lagoon for anything a person has to read at body size.
 
+**The No-Grey-Middle Rule.** Every gradient interpolates in OKLCH: `linear-gradient(90deg in oklch, <teal>, <orange>)`. Plain sRGB blending turns teal to orange through grey; OKLCH keeps the midpoint saturated (it passes through green and gold).
+
 ## Typography
 
 **Display Font:** Geist (with ui-sans-serif, system-ui)
@@ -242,8 +249,8 @@ A near-neutral daylight palette, faintly cooled toward the teal, with two satura
 
 ### Hierarchy
 - **Display** (650, 46px to 88px fluid, line-height 0.92, -0.04em): the hero headline, and the closing statement on the teal band. One per screen.
-- **Headline** (600, 36px to 68px, 1.02, -0.035em): section headings. A second sentence may follow in Slate as a quieter continuation, as long as it stands as its own sentence.
-- **Statement** (600, 32px to 60px, 1.02, -0.04em): point-of-view lines and manifesto items.
+- **Headline** (600, 30px to 48px, 1.05, -0.03em): section headings. A second sentence may follow in Slate as a quieter continuation, as long as it stands as its own sentence.
+- **Statement** (600, 28px to 42px, 1.05, -0.03em): point-of-view lines and manifesto items.
 - **Title** (600, 24px to 32px, 1.05, -0.03em): card and panel titles.
 - **Title Small** (600, 24px, 1.1, -0.02em): step names and short item headings.
 - **Figure** (500, 40px to 76px, 1, -0.04em, tabular numerals): statistics and scores, always with a plain-language label and a source line.
@@ -260,7 +267,7 @@ A near-neutral daylight palette, faintly cooled toward the teal, with two satura
 
 **The Tight Display Rule.** Display and headline tracking stays between -0.04em and -0.03em, and line-height never drops below 0.92. Tighter than that and Geist's counters close.
 
-**The One Gradient Rule.** The hero headline may carry a single accent word in a left-to-right Deep Lagoon to Signal Orange gradient ("sticks."). It appears once on the site and nowhere else: no other gradient text, ever.
+**The One Gradient Rule.** The hero headline may carry a single accent word in a left-to-right Xanadu Teal to Signal Orange gradient, interpolated in OKLCH ("sticks."). It appears once on the site and nowhere else: no other gradient text, ever.
 
 ### Arabic accents (dormant)
 Arabic is **off** until a native speaker has checked the copy (PRODUCT.md). When it is switched on, these rules apply:
@@ -273,13 +280,15 @@ Arabic is **off** until a native speaker has checked the copy (PRODUCT.md). When
 
 ## Layout
 
-A centred column of 1200px with a fluid side gutter (16px to 40px). Sections stack vertically with generous padding (80px to 140px top and bottom), alternating Morning Haze and Plain White grounds to separate them without heavy rules. One teal band, the close, ends the page.
+A centred column of 1200px with a fluid side gutter (16px to 40px). Sections stack vertically with firm, even padding (56px to 96px top and bottom; heading to content 28px to 44px), alternating Morning Haze and Plain White grounds to separate them without heavy rules. One teal band, the close, ends the page.
 
 The spacing rhythm is a 4px base: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128. Use 8 to 16 inside components, 24 to 48 between related blocks, and the section value between sections. Always leave more space above a heading than below it.
 
 Grids are simple: two columns for split content (hero copy and console; the two platform layers), three for parallel items (sectors, proof points), four or five for figures and steps. Below 1000px, split layouts stack copy first; below 820px every grid becomes one column and the nav folds into a menu. Step tracks turn from horizontal to vertical.
 
 **The One Idea Rule.** Each section carries one idea at one scale. A dense section, such as the assessment, is followed by a quiet one.
+
+**The Close Rhythm Rule.** Sections sit close enough that the next heading is in reach. If a gap between sections looks like the page has ended, it is too big.
 
 ## Elevation & Depth
 
@@ -346,6 +355,14 @@ Confident and simple: pills that answer the pointer.
 - **Action:** one primary button on the right.
 - **Mobile:** below 820px, links fold into a full-width panel behind a 44px menu button that reports its open state. The primary action must stay reachable in the open menu.
 
+### Client logo strip
+A white strip directly under the hero. "Clients include" in Label type on the left, then the client logos in a slow, continuous loop (about 36s per set). The logos are greyscale at 72% opacity and turn full colour on hover, 44px tall (36px on phones), with soft fades at both edges.
+- **Control:** a 36px round pause and play button beside the strip. The strip also pauses on hover and keyboard focus.
+- **Reduced motion:** no loop. The logos sit in a static, wrapping row.
+- **Content:** real client logos only, supplied by the client. Duplicate sets used for the loop are hidden from assistive technology.
+
+**The Pause Rule.** Anything that moves for more than five seconds has a visible pause control, stops on hover and focus, and rests completely under reduced motion.
+
 ### Example console (signature)
 A white Float panel that plays an illustrative deployment, step by step, in Label type. Its header always says "example". Values in it are illustrative, never presented as a client result. It cycles at a calm pace, rests under reduced motion, and never starts with content hidden.
 
@@ -353,7 +370,7 @@ A white Float panel that plays an illustrative deployment, step by step, in Labe
 A Plain White panel with a Pale Stone dial ring filling in Signal Orange, a Figure score, a Deep Lagoon tier line, and one primary button. It stays sticky beside the questions on desktop, and sits inline on mobile.
 
 ### Teal band (close)
-Full-width Xanadu Teal, centred Display headline in Harbour Ink, one line of Night Lagoon copy, the X mark above in white and orange, and on-teal buttons. One per page, always last before the footer.
+Full-width Xanadu Teal, 72px to 120px tall padding, centred Display headline in Harbour Ink, one line of Night Lagoon copy, the X mark above in white and orange, and on-teal buttons. One per page, always last before the footer.
 
 ## Do's and Don'ts
 
@@ -365,6 +382,7 @@ Full-width Xanadu Teal, centred Display headline in Harbour Ink, one line of Nig
 - **Do** attribute every statistic in a Caption source line, and label every demonstration as an example.
 - **Do** let motion start from content that is already visible: transform-based entrances, and no fade from zero opacity.
 - **Do** respect `prefers-reduced-motion`: loops stop and content stays put.
+- **Do** write every gradient as `linear-gradient(<angle> in oklch, …)`.
 
 ### Don't:
 - **Don't** use dark or black page backgrounds, glows, radial spotlights or neon edges.
@@ -375,3 +393,4 @@ Full-width Xanadu Teal, centred Display headline in Harbour Ink, one line of Nig
 - **Don't** tile, rotate or animate the X mark, or show it more than once per screen beyond the logo.
 - **Don't** ship Arabic before a native speaker has approved it; when it ships, never more than one line per screen.
 - **Don't** use stock AI imagery (brains, circuits, robots, glowing orbs).
+- **Don't** run any motion for more than five seconds without a visible pause control.
